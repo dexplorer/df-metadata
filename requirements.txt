@@ -1,0 +1,10 @@
+# standard 
+pytest
+pytest-cov
+pylint
+black
+ipython
+# standard py app specific
+setuptools
+# my packages
+git+https://github.com/dexplorer/utils#egg=utils
