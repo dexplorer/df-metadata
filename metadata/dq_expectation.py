@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import json
 from utils import file_io as uff
+from utils import http_io as ufh 
 
 import logging
 
@@ -18,13 +19,12 @@ class DQExpectation:
 
     @classmethod
     def from_json(self, exp_id):
-        json_file = "https://github.com/dexplorer/df-metadata/blob/ddf4fff0e85a4175fbd34406bedb9bbb14e0edb6/metadata/api_data/dq_expectations.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dq_expectations.json"
         json_key = "dq_expectations"
-        # with open(json_file, 'r') as f:
-        with uff.uf_open_file(file_path=json_file, open_mode="r") as f:
-            dq_expectations = json.load(f)[json_key]
 
+        response = ufh.get_http_response(url=json_file_url)
         try:
+            dq_expectations = response.json()[json_key]
             if dq_expectations:
                 for dq_expectation in dq_expectations:
                     # print(dq_expectations)

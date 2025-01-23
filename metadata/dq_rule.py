@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 import json
 from utils import file_io as uff
+from utils import http_io as ufh 
 
 import logging
 
@@ -34,13 +35,12 @@ def get_dq_rules_by_dataset_id(dataset_id: str, dq_rules: list[DQRule]) -> list[
 
 
 def get_all_dq_rules_from_json(json_file: str, json_key: str) -> list[DQRule]:
-    json_file = "https://github.com/dexplorer/df-metadata/blob/ddf4fff0e85a4175fbd34406bedb9bbb14e0edb6/metadata/api_data/dq_rules.json"
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dq_rules.json"
     json_key = "dq_rules"
-    # with open(json_file, 'r') as f:
-    with uff.uf_open_file(file_path=json_file, open_mode="r") as f:
-        dq_rules: list[dict] = json.load(f)[json_key]
 
+    response = ufh.get_http_response(url=json_file_url)
     try:
+        dq_rules = response.json()[json_key]
         if dq_rules:
             # print(dq_rules)
             dq_rule_objects = []

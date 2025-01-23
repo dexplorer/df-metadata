@@ -12,6 +12,7 @@
         "file_delim": ",",
         "file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.csv",
         "schedule_id": "2",
+        "dq_rule_ids": [], 
         "model_parameters": {
           "features": [
             {

@@ -6,5 +6,7 @@ black
 ipython
 # standard py app specific
 setuptools
+# app specific 
+requests
 # my packages
 git+https://github.com/dexplorer/utils#egg=utils

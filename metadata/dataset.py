@@ -1,6 +1,8 @@
 from dataclasses import dataclass
+import requests
 import json
 from utils import file_io as uff
+from utils import http_io as ufh 
 
 import logging
 
@@ -78,14 +80,13 @@ class Dataset:
 
     @classmethod
     def from_json(self, dataset_id):
-        json_file = "https://github.com/dexplorer/df-metadata/blob/ddf4fff0e85a4175fbd34406bedb9bbb14e0edb6/metadata/api_data/datasets.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
         json_key = "datasets"
-        # with open(json_file, 'r') as f:
-        with uff.uf_open_file(file_path=json_file, open_mode="r") as f:
-            datasets = json.load(f)[json_key]
-            # print(datasets)
 
+        response = ufh.get_http_response(url=json_file_url)
         try:
+            datasets = response.json()[json_key]
+            # print(datasets)
             if datasets:
                 for dataset in datasets:
                     # print(dataset)
