@@ -1,7 +1,5 @@
 # from typing_extensions import TypedDict
 from dataclasses import dataclass
-import json
-from utils import file_io as uff
 from utils import http_io as ufh 
 
 import logging
@@ -34,7 +32,7 @@ def get_dq_rules_by_dataset_id(dataset_id: str, dq_rules: list[DQRule]) -> list[
     return dq_rules_for_dataset
 
 
-def get_all_dq_rules_from_json(json_file: str, json_key: str) -> list[DQRule]:
+def get_all_dq_rules_from_json() -> list[DQRule]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dq_rules.json"
     json_key = "dq_rules"
 
