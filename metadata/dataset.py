@@ -77,7 +77,9 @@ class Dataset:
             self.model_parameters = model_parameters
 
     @classmethod
-    def from_json(self, json_file, json_key, dataset_id):
+    def from_json(self, dataset_id):
+        json_file = "/workspaces/df-metadata/metadata/api_data/datasets.json"
+        json_key = "datasets"
         # with open(json_file, 'r') as f:
         with uff.uf_open_file(file_path=json_file, open_mode="r") as f:
             datasets = json.load(f)[json_key]
@@ -94,9 +96,6 @@ class Dataset:
         except ValueError as error:
             logging.error(error)
             raise
-
-    # def add_dq_rule(self, dq_rule_id: str):
-    #     self.dq_rule_ids.append(dq_rule_id)
 
 
 @dataclass
