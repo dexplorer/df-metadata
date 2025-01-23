@@ -56,26 +56,25 @@ class Dataset:
     catalog_ind: str
     schedule_id: str
     dq_rule_ids: list[str]
-    model_paramters: ModelParameters
+    model_parameters: ModelParameters
 
     def __init__(
         self,
         dataset_id: str,
         catalog_ind: bool,
         schedule_id: str,
-        model_parameters: ModelParameters | dict,
+        dq_rule_ids: list[str] | None, 
+        model_parameters: ModelParameters | dict | None,
     ):
         self.kind = "generic"
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
-        # self.model_paramters = model_parameters
+        self.dq_rule_ids = dq_rule_ids 
         if isinstance(model_parameters, dict):
             self.model_parameters = ModelParameters(**model_parameters)
         else:
             self.model_parameters = model_parameters
-
-        # self.dq_rule_ids = []
 
     @classmethod
     def from_json(self, json_file, json_key, dataset_id):
@@ -109,10 +108,11 @@ class DelimFileDataset(Dataset):
         dataset_id: str,
         catalog_ind: bool,
         schedule_id: str,
-        model_parameters: ModelParameters | dict,
+        dq_rule_ids: list[str] | None, 
+        model_parameters: ModelParameters | dict | None,
         file_delim: str,
     ):
-        super().__init__(dataset_id, catalog_ind, schedule_id, model_parameters)
+        super().__init__(dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters)
         self.kind = "delim file"
         self.file_delim = file_delim
 
@@ -126,12 +126,13 @@ class LocalDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         catalog_ind: bool,
         schedule_id: str,
-        model_parameters: ModelParameters | dict,
+        dq_rule_ids: list[str] | None, 
+        model_parameters: ModelParameters | dict | None,
         file_delim: str,
         file_path: str,
     ):
         super().__init__(
-            dataset_id, catalog_ind, schedule_id, model_parameters, file_delim
+            dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters, file_delim
         )
         self.kind = "local delim file"
         self.file_path = file_path
@@ -149,12 +150,13 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         dataset_id: str,
         catalog_ind: bool,
         schedule_id: str,
-        model_parameters: ModelParameters | dict,
+        dq_rule_ids: list[str] | None, 
+        model_parameters: ModelParameters | dict | None,
         file_delim: str,
         s3_uri: str,
     ):
         super().__init__(
-            dataset_id, catalog_ind, schedule_id, model_parameters, file_delim
+            dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters, file_delim
         )
         self.kind = "aws s3 delim file"
         self.s3_uri = s3_uri
@@ -169,12 +171,13 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         catalog_ind: bool,
         schedule_id: str,
-        model_parameters: ModelParameters | dict,
+        dq_rule_ids: list[str] | None, 
+        model_parameters: ModelParameters | dict | None,
         file_delim: str,
         adls_uri: str,
     ):
         super().__init__(
-            dataset_id, catalog_ind, schedule_id, model_parameters, file_delim
+            dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters, file_delim
         )
         self.kind = "azure adls delim file"
         self.adls_uri = adls_uri
