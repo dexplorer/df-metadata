@@ -18,7 +18,7 @@ class DQExpectation:
 
     @classmethod
     def from_json(self, exp_id):
-        json_file = "/workspaces/df-metadata/metadata/api_data/dq_expectations.json"
+        json_file = "https://github.com/dexplorer/df-metadata/blob/ddf4fff0e85a4175fbd34406bedb9bbb14e0edb6/metadata/api_data/dq_expectations.json"
         json_key = "dq_expectations"
         # with open(json_file, 'r') as f:
         with uff.uf_open_file(file_path=json_file, open_mode="r") as f:
