@@ -4,7 +4,10 @@
         "dataset_id": "1",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/assets.csv"
+        "file_path": "APP_ROOT_DIR/data/assets.csv",
+        "schedule_id": null, 
+        "dq_rule_ids": null, 
+        "model_parameters": null 
       },
       {
         "dataset_id": "2",
@@ -49,7 +52,10 @@
         "dataset_id": "3",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/customer.csv"
+        "file_path": "APP_ROOT_DIR/data/customer.csv", 
+        "schedule_id": null, 
+        "dq_rule_ids": null, 
+        "model_parameters": null 
       }
     ]
   }
