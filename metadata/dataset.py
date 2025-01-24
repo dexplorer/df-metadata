@@ -1,5 +1,7 @@
 from dataclasses import dataclass
-from utils import http_io as ufh 
+
+# from typing import Optional
+from utils import http_io as ufh
 
 import logging
 
@@ -61,7 +63,7 @@ class Dataset:
         self,
         dataset_id: str,
         catalog_ind: bool,
-        schedule_id: str,
+        schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
     ):
@@ -96,7 +98,7 @@ class Dataset:
             raise
 
 
-@dataclass
+@dataclass(kw_only=True)
 class DelimFileDataset(Dataset):
     file_delim: str
 
@@ -104,7 +106,7 @@ class DelimFileDataset(Dataset):
         self,
         dataset_id: str,
         catalog_ind: bool,
-        schedule_id: str,
+        schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
@@ -116,7 +118,7 @@ class DelimFileDataset(Dataset):
         self.file_delim = file_delim
 
 
-@dataclass
+@dataclass(kw_only=True)
 class LocalDelimFileDataset(DelimFileDataset):
     file_path: str
 
@@ -124,7 +126,7 @@ class LocalDelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         catalog_ind: bool,
-        schedule_id: str,
+        schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
@@ -145,7 +147,7 @@ class LocalDelimFileDataset(DelimFileDataset):
         return self.file_path.replace("yyyymmdd", date_str)
 
 
-@dataclass
+@dataclass(kw_only=True)
 class AWSS3DelimFileDataset(DelimFileDataset):
     s3_uri: str
 
@@ -153,7 +155,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         catalog_ind: bool,
-        schedule_id: str,
+        schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
@@ -171,7 +173,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         self.s3_uri = s3_uri
 
 
-@dataclass
+@dataclass(kw_only=True)
 class AzureADLSDelimFileDataset(DelimFileDataset):
     adls_uri: str
 
@@ -179,7 +181,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         catalog_ind: bool,
-        schedule_id: str,
+        schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
