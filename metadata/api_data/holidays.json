@@ -1,0 +1,75 @@
+{
+    "holidays": [
+      {
+        "holiday_date": "2024-01-01",
+        "holiday_desc": "New Year's Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      },
+      {
+        "holiday_date": "2024-01-15",
+        "holiday_desc": "Martin Luther King, Jr. Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      },
+      {
+        "holiday_date": "2024-02-19",
+        "holiday_desc": "Washington's Birthday",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      },
+      {
+        "holiday_date": "2024-03-29",
+        "holiday_desc": "Good Friday",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-05-27",
+        "holiday_desc": "Memorial Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-06-19",
+        "holiday_desc": "Juneteenth National Independence Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-07-04",
+        "holiday_desc": "Independence Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-09-02",
+        "holiday_desc": "Labor Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-11-28",
+        "holiday_desc": "Thanksgiving Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      }, 
+      {
+        "holiday_date": "2024-12-25",
+        "holiday_desc": "Christmas Day",
+        "holiday_groups": [
+            "NYSE"
+        ]
+      } 
+    ]
+  }
+  

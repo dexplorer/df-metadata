@@ -1,0 +1,48 @@
+{
+    "schedules": [
+      {
+        "schedule_id": "1",
+        "application_id": "1",
+        "schedule_desc": "Monday to Friday excluding NYSE holidays",
+        "schedule_frequency": "daily",
+        "run_calendar_offset": 0, 
+        "holiday_groups": [
+            "NYSE", 
+            "Weekend" 
+        ]
+      },
+      {
+        "schedule_id": "2",
+        "application_id": "1",
+        "schedule_desc": "Monday to Friday excluding Federal Bank holidays",
+        "schedule_frequency": "daily",
+        "run_calendar_offset": 0, 
+        "holiday_groups": [
+            "Federal Bank",
+            "Weekend"
+        ]
+      },
+      {
+        "schedule_id": "3",
+        "application_id": "1",
+        "schedule_desc": "Calendar Month End",
+        "schedule_frequency": "monthly",
+        "run_calendar_offset": 0, 
+        "holiday_groups": [
+        ]
+      },
+      {
+        "schedule_id": "4",
+        "application_id": "1",
+        "schedule_desc": "Business Month End excluding NYSE holidays and weekdns",
+        "schedule_frequency": "monthly",
+        "run_calendar_offset": 0, 
+        "holiday_groups": [
+            "NYSE", 
+            "Weekend" 
+        ]
+      }
+    ]
+  }
+  
+  
