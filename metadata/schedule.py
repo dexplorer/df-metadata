@@ -10,7 +10,7 @@ class Schedule:
     application_id: str
     schedule_desc: str
     schedule_frequency: str
-    run_calendar_offset: int 
+    run_calendar_offset: int
     holiday_groups: list[str]
 
     def __init__(
@@ -19,7 +19,7 @@ class Schedule:
         application_id,
         schedule_desc,
         schedule_frequency,
-        run_calendar_offset, 
+        run_calendar_offset,
         holiday_groups,
     ):
         self.schedule_id = schedule_id

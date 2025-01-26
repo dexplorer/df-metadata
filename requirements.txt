@@ -8,5 +8,6 @@ ipython
 setuptools
 # app specific 
 requests
+python-dateutil
 # my packages
 git+https://github.com/dexplorer/utils#egg=utils
