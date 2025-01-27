@@ -29,7 +29,7 @@ class DQExpectation:
                     if dq_expectation["exp_id"] == exp_id:
                         return self(**dq_expectation)
             else:
-                raise ValueError("DQ expectation data is invalid.")
+                raise ValueError("Data quality expectation data is invalid.")
         except ValueError as error:
             logging.error(error)
             raise

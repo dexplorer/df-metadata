@@ -1,0 +1,27 @@
+{
+    "dr_rules": [
+      {
+        "rule_id": "1",
+        "dataset_id": "2",
+        "exp_id": "1",
+        "rule_fail_action": "abort",
+        "column": "account_id"
+      },
+      {
+        "rule_id": "2",
+        "dataset_id": "2",
+        "exp_id": "2",
+        "rule_fail_action": "abort",
+        "column": "asset_id"
+      },
+      {
+        "rule_id": "3",
+        "dataset_id": "2",
+        "exp_id": "3",
+        "rule_fail_action": "abort",
+        "column": "asset_value"
+      }
+    ]
+  }
+  
+  

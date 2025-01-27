@@ -1,0 +1,20 @@
+{
+    "dr_expectations": [
+      {
+        "exp_id": "1",
+        "exp_name": "ExpectColumnValuesCountToMatch",
+        "ge_method": "count"
+      },
+      {
+        "exp_id": "2",
+        "exp_name": "ExpectColumnValuesMedianToMatch",
+        "ge_method": "median"
+      },
+      {
+        "exp_id": "3",
+        "exp_name": "ExpectColumnValuesSumToMatch",
+        "ge_method": "sum"
+      }
+    ]
+  }
+  
