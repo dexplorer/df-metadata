@@ -4,11 +4,13 @@
 
 This is a metadata management application. It implements modules to serve out the following metadata and associated functionalities.
 
-* Datasets (includes DQ ML model parameters)
-* DQ expectations
-* DQ rules
+* Datasets (includes Data Quality ML model parameters)
+* Data Quality Expectations
+* Data Quality Rules
 * Schedules
 * Holidays
+* Data Reconciliation Expectations
+* Data Reconciliation Rules
 
 
 ### Install
@@ -25,12 +27,12 @@ This is a metadata management application. It implements modules to serve out th
   from metadata import datasets
   ```  
 
-- **DQ expectations**
+- **Data Quality Expectations**
   ```
   from metadata import dq_expectations
   ```  
 
-- **DQ rules**
+- **Data Quality Rules**
   ```
   from metadata import dq_rules
   ```  
@@ -44,3 +46,14 @@ This is a metadata management application. It implements modules to serve out th
   ```
   from metadata import holidays
   ```  
+
+- **Data Reconciliation Expectations**
+  ```
+  from metadata import dr_expectations
+  ```  
+
+- **Data Reconciliation Rules**
+  ```
+  from metadata import dr_rules
+  ```  
+
