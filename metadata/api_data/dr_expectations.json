@@ -7,8 +7,8 @@
       },
       {
         "exp_id": "2",
-        "exp_name": "ExpectColumnValuesMedianToMatch",
-        "ge_method": "median"
+        "exp_name": "ExpectColumnValueCountsMedianToMatch",
+        "ge_method": "count_median"
       },
       {
         "exp_id": "3",
@@ -19,6 +19,11 @@
         "exp_id": "4",
         "exp_name": "ExpectColumnUniqueValuesCountToMatch",
         "ge_method": "distinct"
+      }, 
+      {
+        "exp_id": "5",
+        "exp_name": "ExpectColumnValuesMedianToMatch",
+        "ge_method": "median"
       }
     ]
   }
