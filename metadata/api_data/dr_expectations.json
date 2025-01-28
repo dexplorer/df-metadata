@@ -14,6 +14,11 @@
         "exp_id": "3",
         "exp_name": "ExpectColumnValuesSumToMatch",
         "ge_method": "sum"
+      },
+      {
+        "exp_id": "4",
+        "exp_name": "ExpectColumnUniqueValuesCountToMatch",
+        "ge_method": "distinct"
       }
     ]
   }

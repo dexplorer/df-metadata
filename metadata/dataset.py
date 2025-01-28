@@ -80,6 +80,7 @@ class Dataset:
     @classmethod
     def from_json(self, dataset_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
+        # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
         json_key = "datasets"
 
         response = ufh.get_http_response(url=json_file_url)
@@ -121,7 +122,9 @@ class DelimFileDataset(Dataset):
 @dataclass(kw_only=True)
 class LocalDelimFileDataset(DelimFileDataset):
     file_path: str
-
+    recon_file_delim: str
+    recon_file_path: str 
+ 
     def __init__(
         self,
         dataset_id: str,
@@ -130,7 +133,9 @@ class LocalDelimFileDataset(DelimFileDataset):
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
-        file_path: str,
+        file_path: str, 
+        recon_file_delim: str, 
+        recon_file_path: str
     ):
         super().__init__(
             dataset_id,
@@ -142,6 +147,8 @@ class LocalDelimFileDataset(DelimFileDataset):
         )
         self.kind = "local delim file"
         self.file_path = file_path
+        self.recon_file_delim = recon_file_delim
+        self.recon_file_path = recon_file_path
 
     def resolve_file_path(self, date_str):
         return self.file_path.replace("yyyymmdd", date_str)
