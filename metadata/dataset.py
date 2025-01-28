@@ -153,6 +153,9 @@ class LocalDelimFileDataset(DelimFileDataset):
     def resolve_file_path(self, date_str):
         return self.file_path.replace("yyyymmdd", date_str)
 
+    def resolve_recon_file_path(self, date_str):
+        return self.recon_file_path.replace("yyyymmdd", date_str)
+
 
 @dataclass(kw_only=True)
 class AWSS3DelimFileDataset(DelimFileDataset):
