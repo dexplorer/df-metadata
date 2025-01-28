@@ -34,7 +34,7 @@
         "rule_fail_action": "abort",
         "column": "account_id", 
         "group_by_columns": [
-          "account_id"
+          "asset_id"
         ] 
       }
     ]
