@@ -15,10 +15,7 @@
         "dataset_id": "2",
         "exp_id": "2",
         "rule_fail_action": "abort",
-        "column": "asset_id", 
-        "group_by": [
-          "all"
-        ] 
+        "column": "asset_id" 
       },
       {
         "rule_id": "3",
