@@ -6,7 +6,7 @@
         "exp_id": "1",
         "rule_fail_action": "abort",
         "column": "account_id", 
-        "group_by": [
+        "group_by_columns": [
           "all"
         ] 
       },
@@ -23,7 +23,7 @@
         "exp_id": "3",
         "rule_fail_action": "abort",
         "column": "asset_value", 
-        "group_by": [
+        "group_by_columns": [
           "asset_id"
         ] 
       },
@@ -33,7 +33,7 @@
         "exp_id": "4",
         "rule_fail_action": "abort",
         "column": "account_id", 
-        "group_by": [
+        "group_by_columns": [
           "account_id"
         ] 
       }
