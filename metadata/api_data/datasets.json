@@ -62,6 +62,18 @@
         "model_parameters": null, 
         "recon_file_delim": "|", 
         "recon_file_path": "APP_ROOT_DIR/data/customer_yyyymmdd.recon" 
+      }, 
+      {
+        "dataset_id": "12",
+        "catalog_ind": true,
+        "schedule_id": null, 
+        "dq_rule_ids": null, 
+        "model_parameters": null, 
+        "database_name": "dl_asset_mgmt", 
+        "table_name": "tacct_pos", 
+        "partition_keys": [
+          "effective_date" 
+        ]
       }
     ]
   }
