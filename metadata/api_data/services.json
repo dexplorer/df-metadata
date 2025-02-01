@@ -1,0 +1,21 @@
+{
+    "services": [
+      {
+        "task": "data quality",
+        "service": "dq_app_api"
+      },
+      {
+        "task": "data quality ml",
+        "service": "dqml_app_api"
+      },
+      {
+        "task": "data recon",
+        "service": "dr_app_api"
+      },
+      {
+        "task": "data profile",
+        "service": "dp_app_api"
+      }
+    ]
+  }
+  

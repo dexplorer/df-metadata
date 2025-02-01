@@ -1,0 +1,42 @@
+{
+    "ingestion_tasks": [
+      {
+        "ingestion_task_id": "1",
+        "source_dataset_id": "1",
+        "target_dataset_id": "11",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "delimited file", 
+            "target_type": "spark table", 
+            "load_type": "overwrite", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "ingestion_task_id": "2",
+        "source_dataset_id": "2",
+        "target_dataset_id": "12",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "delimited file", 
+            "target_type": "spark table partitioned", 
+            "load_type": "append", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "ingestion_task_id": "3",
+        "source_dataset_id": "3",
+        "target_dataset_id": "13",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "delimited file", 
+            "target_type": "spark table partitioned", 
+            "load_type": "append", 
+            "idempotent": true 
+        } 
+      }
+    ]
+  }
+  
+  
