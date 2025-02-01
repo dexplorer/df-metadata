@@ -207,3 +207,36 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         )
         self.kind = "azure adls delim file"
         self.adls_uri = adls_uri
+
+@dataclass(kw_only=True)
+class SparkTableDataset(Dataset):
+    database_name: str
+    table_name: str
+    partition_keys: list[str] | None
+
+    def __init__(
+        self,
+        dataset_id: str,
+        catalog_ind: bool,
+        schedule_id: str | None,
+        dq_rule_ids: list[str] | None,
+        model_parameters: ModelParameters | dict | None,
+        database_name: str,
+        table_name: str,
+        partition_keys: list[str] | None,
+    ):
+        super().__init__(
+            dataset_id,
+            catalog_ind,
+            schedule_id,
+            dq_rule_ids,
+            model_parameters,
+        )
+        self.kind = "spark table"
+        self.database_name = database_name
+        self.table_name = table_name
+        self.partition_keys = partition_keys
+
+    def get_qualified_table_name(self):
+        return f"{self.database_name}.{self.table_name}")
+
