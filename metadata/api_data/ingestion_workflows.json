@@ -5,19 +5,19 @@
         "ingestion_task_id": "1",
         "pre_ingestion_tasks": [
           {
-            "task": "data quality",
+            "name": "data quality",
             "required_parameters": {
               "dataset_id": "1"
             }
           },
           {
-            "task": "data quality ml",
+            "name": "data quality ml",
             "required_parameters": {
               "dataset_id": "1"
             }
           },
           {
-            "task": "data profile",
+            "name": "data profile",
             "required_parameters": {
               "dataset_id": "1"
             }
@@ -25,7 +25,7 @@
         ],
         "post_ingestion_tasks": [
           {
-            "task": "data recon",
+            "name": "data recon",
             "required_parameters": {
               "dataset_id": "1"
             }

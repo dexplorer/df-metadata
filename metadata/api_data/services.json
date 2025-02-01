@@ -1,20 +1,20 @@
 {
     "services": [
       {
-        "task": "data quality",
-        "service": "dq_app_api"
+        "name": "data quality",
+        "endpoint": "dq_app_api"
       },
       {
-        "task": "data quality ml",
-        "service": "dqml_app_api"
+        "name": "data quality ml",
+        "endpoint": "dqml_app_api"
       },
       {
-        "task": "data recon",
-        "service": "dr_app_api"
+        "name": "data recon",
+        "endpoint": "dr_app_api"
       },
       {
-        "task": "data profile",
-        "service": "dp_app_api"
+        "name": "data profile",
+        "endpoint": "dp_app_api"
       }
     ]
   }

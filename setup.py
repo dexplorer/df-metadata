@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="metadata",
-    version="1.0.7",
+    version="1.0.8",
     # setup will install the app as command line module
     scripts=["./scripts/metadata"],
     author="Rajakumaran Arivumani",
