@@ -15,17 +15,18 @@ class IngestionPattern:
 
     def __init__(
         self,
-        loader: str, 
-        source_type: str, 
-        target_type: str, 
-        load_type: str, 
-        idempotent: bool
+        loader: str,
+        source_type: str,
+        target_type: str,
+        load_type: str,
+        idempotent: bool,
     ):
         self.loader = loader
         self.source_type = source_type
         self.target_type = target_type
         self.load_type = load_type
         self.idempotent = idempotent
+
 
 @dataclass
 class IngestionTask:

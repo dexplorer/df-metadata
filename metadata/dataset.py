@@ -123,8 +123,8 @@ class DelimFileDataset(Dataset):
 class LocalDelimFileDataset(DelimFileDataset):
     file_path: str
     recon_file_delim: str
-    recon_file_path: str 
- 
+    recon_file_path: str
+
     def __init__(
         self,
         dataset_id: str,
@@ -133,9 +133,9 @@ class LocalDelimFileDataset(DelimFileDataset):
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
         file_delim: str,
-        file_path: str, 
-        recon_file_delim: str, 
-        recon_file_path: str
+        file_path: str,
+        recon_file_delim: str,
+        recon_file_path: str,
     ):
         super().__init__(
             dataset_id,
