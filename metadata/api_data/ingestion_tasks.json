@@ -8,7 +8,7 @@
             "loader": "spark",
             "source_type": "delimited file", 
             "target_type": "spark table", 
-            "load_type": "overwrite", 
+            "load_type": "full", 
             "idempotent": true 
         } 
       },
@@ -19,8 +19,8 @@
         "ingestion_pattern": {
             "loader": "spark",
             "source_type": "delimited file", 
-            "target_type": "spark table partitioned", 
-            "load_type": "append", 
+            "target_type": "spark table", 
+            "load_type": "incremental", 
             "idempotent": true 
         } 
       },
@@ -31,8 +31,8 @@
         "ingestion_pattern": {
             "loader": "spark",
             "source_type": "delimited file", 
-            "target_type": "spark table partitioned", 
-            "load_type": "append", 
+            "target_type": "spark table", 
+            "load_type": "incremental", 
             "idempotent": true 
         } 
       }
