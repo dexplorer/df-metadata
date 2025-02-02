@@ -7,7 +7,7 @@ import logging
 
 @dataclass
 class ManagementTask:
-    task: str
+    name: str
     required_parameters: dict
 
     def __init__(self, task: str, required_parameters: dict):
