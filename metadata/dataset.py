@@ -238,5 +238,5 @@ class SparkTableDataset(Dataset):
         self.partition_keys = partition_keys
 
     def get_qualified_table_name(self):
-        return f"{self.database_name}.{self.table_name}")
+        return f"{self.database_name}.{self.table_name}"
 
