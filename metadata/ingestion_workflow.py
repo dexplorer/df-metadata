@@ -10,8 +10,8 @@ class ManagementTask:
     name: str
     required_parameters: dict
 
-    def __init__(self, task: str, required_parameters: dict):
-        self.task = task
+    def __init__(self, name: str, required_parameters: dict):
+        self.name = name
         self.required_parameters = required_parameters
 
 
