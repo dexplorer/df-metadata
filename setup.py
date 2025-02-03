@@ -15,7 +15,7 @@ setuptools.setup(
     # packages = find_packages(),
     install_requires=[
         "setuptools",
-        "utils@git+https://github.com/dexplorer/utils#egg=utils-1.0.1",
+        "utils@git+https://github.com/dexplorer/utils#egg=utils-1.0.2",
     ],
     python_requires=">=3.12",
 )
