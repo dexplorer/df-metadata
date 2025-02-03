@@ -70,12 +70,14 @@ class Dataset:
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
     ):
-        self.kind = DatasetKind.GENERIC
+        # self.kind = DatasetKind.GENERIC
+        self.kind = DatasetKind(dataset_kind)
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
@@ -114,6 +116,7 @@ class DelimFileDataset(Dataset):
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
@@ -121,9 +124,9 @@ class DelimFileDataset(Dataset):
         file_delim: str,
     ):
         super().__init__(
-            dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters
+            dataset_id, dataset_kind, catalog_ind, schedule_id, dq_rule_ids, model_parameters
         )
-        self.kind = DatasetKind.DELIM_FILE
+        # self.kind = DatasetKind.DELIM_FILE
         self.file_delim = file_delim
 
 
@@ -136,6 +139,7 @@ class LocalDelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
@@ -147,13 +151,14 @@ class LocalDelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
+            dataset_kind, 
             catalog_ind,
             schedule_id,
             dq_rule_ids,
             model_parameters,
             file_delim,
         )
-        self.kind = DatasetKind.LOCAL_DELIM_FILE
+        # self.kind = DatasetKind.LOCAL_DELIM_FILE
         self.file_path = file_path
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
@@ -172,6 +177,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
@@ -181,13 +187,14 @@ class AWSS3DelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
+            dataset_kind, 
             catalog_ind,
             schedule_id,
             dq_rule_ids,
             model_parameters,
             file_delim,
         )
-        self.kind = DatasetKind.AWS_S3_DELIM_FILE
+        # self.kind = DatasetKind.AWS_S3_DELIM_FILE
         self.s3_uri = s3_uri
 
 
@@ -198,6 +205,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
@@ -207,13 +215,14 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
+            dataset_kind, 
             catalog_ind,
             schedule_id,
             dq_rule_ids,
             model_parameters,
             file_delim,
         )
-        self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
+        # self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
         self.adls_uri = adls_uri
 
 @dataclass(kw_only=True)
@@ -227,6 +236,7 @@ class SparkTableDataset(Dataset):
     def __init__(
         self,
         dataset_id: str,
+        dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
         dq_rule_ids: list[str] | None,
@@ -239,12 +249,13 @@ class SparkTableDataset(Dataset):
     ):
         super().__init__(
             dataset_id,
+            dataset_kind, 
             catalog_ind,
             schedule_id,
             dq_rule_ids,
             model_parameters,
         )
-        self.kind = DatasetKind.SPARK_TABLE
+        # self.kind = DatasetKind.SPARK_TABLE
         self.database_name = database_name
         self.table_name = table_name
         self.partition_keys = partition_keys

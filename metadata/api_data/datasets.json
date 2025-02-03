@@ -2,6 +2,7 @@
     "datasets": [
       {
         "dataset_id": "1",
+        "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_ROOT_DIR/data/assets.csv",
@@ -13,6 +14,7 @@
       },
       {
         "dataset_id": "2",
+        "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.csv",
@@ -54,6 +56,7 @@
       },
       {
         "dataset_id": "3",
+        "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_ROOT_DIR/data/customer.csv", 
@@ -65,6 +68,7 @@
       }, 
       {
         "dataset_id": "12",
+        "dataset_kind": "spark table",
         "catalog_ind": true,
         "schedule_id": null, 
         "dq_rule_ids": null, 
