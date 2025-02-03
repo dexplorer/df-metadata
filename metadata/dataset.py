@@ -267,3 +267,27 @@ class SparkTableDataset(Dataset):
 
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
+
+def get_dataset_from_json(self, dataset_id):
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
+    # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
+    json_key = "datasets"
+
+    response = ufh.get_http_response(url=json_file_url)
+    try:
+        datasets = response.json()[json_key]
+        # print(datasets)
+        if datasets:
+            for dataset in datasets:
+                # print(dataset)
+                if dataset["dataset_id"] == dataset_id:
+                    if dataset["dataset_kind"] == DatasetKind.LOCAL_DELIM_FILE:
+                        return LocalDelimFileDataset(**dataset)
+                    elif dataset["dataset_kind"] == DatasetKind.SPARK_TABLE:
+                        return SparkTableDataset(**dataset)
+        else:
+            raise ValueError("Dataset data is invalid.")
+    except ValueError as error:
+        logging.error(error)
+        raise
+
