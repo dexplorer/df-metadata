@@ -70,7 +70,7 @@
         "dataset_id": "12",
         "dataset_kind": "spark table",
         "catalog_ind": true,
-        "schedule_id": null, 
+        "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
         "database_name": "dl_asset_mgmt", 
