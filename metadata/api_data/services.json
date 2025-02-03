@@ -9,7 +9,7 @@
         "endpoint": "dqml_app_api"
       },
       {
-        "name": "data recon",
+        "name": "data reconciliation",
         "endpoint": "dr_app_api"
       },
       {

@@ -25,7 +25,7 @@
         ],
         "post_ingestion_tasks": [
           {
-            "name": "data recon",
+            "name": "data reconciliation",
             "required_parameters": {
               "dataset_id": "12"
             }
