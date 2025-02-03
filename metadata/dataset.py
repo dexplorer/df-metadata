@@ -268,7 +268,7 @@ class SparkTableDataset(Dataset):
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
 
-def get_dataset_from_json(self, dataset_id):
+def get_dataset_from_json(dataset_id):
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
     # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
     json_key = "datasets"
