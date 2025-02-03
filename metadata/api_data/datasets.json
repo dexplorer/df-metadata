@@ -73,7 +73,9 @@
         "table_name": "tacct_pos", 
         "partition_keys": [
           "effective_date" 
-        ]
+        ], 
+        "recon_file_delim": "|", 
+        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
       }
     ]
   }

@@ -1,10 +1,18 @@
 from dataclasses import dataclass
+from enum import StrEnum
 
 # from typing import Optional
 from utils import http_io as ufh
 
 import logging
 
+class DatasetKind(StrEnum):
+    GENERIC = 'generic'
+    DELIM_FILE = 'delim file'
+    LOCAL_DELIM_FILE = 'local delim file'
+    AWS_S3_DELIM_FILE = 'aws s3 delim file'
+    AZURE_ADLS_DELIM_FILE = 'azure adls delim file'
+    SPARK_TABLE = 'spark table'
 
 @dataclass
 class Feature:
@@ -52,7 +60,7 @@ class ModelParameters:
 
 @dataclass
 class Dataset:
-    kind: str
+    kind: DatasetKind
     dataset_id: str
     catalog_ind: str
     schedule_id: str
@@ -67,7 +75,7 @@ class Dataset:
         dq_rule_ids: list[str] | None,
         model_parameters: ModelParameters | dict | None,
     ):
-        self.kind = "generic"
+        self.kind = DatasetKind.GENERIC
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
@@ -115,7 +123,7 @@ class DelimFileDataset(Dataset):
         super().__init__(
             dataset_id, catalog_ind, schedule_id, dq_rule_ids, model_parameters
         )
-        self.kind = "delim file"
+        self.kind = DatasetKind.DELIM_FILE
         self.file_delim = file_delim
 
 
@@ -145,7 +153,7 @@ class LocalDelimFileDataset(DelimFileDataset):
             model_parameters,
             file_delim,
         )
-        self.kind = "local delim file"
+        self.kind = DatasetKind.LOCAL_DELIM_FILE
         self.file_path = file_path
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
@@ -179,7 +187,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             model_parameters,
             file_delim,
         )
-        self.kind = "aws s3 delim file"
+        self.kind = DatasetKind.AWS_S3_DELIM_FILE
         self.s3_uri = s3_uri
 
 
@@ -205,7 +213,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
             model_parameters,
             file_delim,
         )
-        self.kind = "azure adls delim file"
+        self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
         self.adls_uri = adls_uri
 
 @dataclass(kw_only=True)
@@ -213,6 +221,8 @@ class SparkTableDataset(Dataset):
     database_name: str
     table_name: str
     partition_keys: list[str] | None
+    recon_file_delim: str | None
+    recon_file_path: str | None
 
     def __init__(
         self,
@@ -224,6 +234,8 @@ class SparkTableDataset(Dataset):
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
+        recon_file_delim: str | None,
+        recon_file_path: str | None,
     ):
         super().__init__(
             dataset_id,
@@ -232,11 +244,15 @@ class SparkTableDataset(Dataset):
             dq_rule_ids,
             model_parameters,
         )
-        self.kind = "spark table"
+        self.kind = DatasetKind.SPARK_TABLE
         self.database_name = database_name
         self.table_name = table_name
         self.partition_keys = partition_keys
+        self.recon_file_delim = recon_file_delim
+        self.recon_file_path = recon_file_path
 
     def get_qualified_table_name(self):
         return f"{self.database_name}.{self.table_name}"
 
+    def resolve_recon_file_path(self, date_str):
+        return self.recon_file_path.replace("yyyymmdd", date_str)
