@@ -6,7 +6,7 @@
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_ROOT_DIR/data/assets.csv",
-        "schedule_id": null, 
+        "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
         "recon_file_delim": "|", 
@@ -59,12 +59,12 @@
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/customer.csv", 
-        "schedule_id": null, 
+        "file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.csv", 
+        "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/customer_yyyymmdd.recon" 
+        "recon_file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.recon" 
       }, 
       {
         "dataset_id": "12",
