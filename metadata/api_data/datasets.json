@@ -5,7 +5,7 @@
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/assets.csv",
+        "file_path": "APP_ROOT_DIR/data/assets_yyyymmdd.csv",
         "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
