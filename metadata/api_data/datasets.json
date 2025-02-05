@@ -67,6 +67,20 @@
         "recon_file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.recon" 
       }, 
       {
+        "dataset_id": "11",
+        "dataset_kind": "spark table",
+        "catalog_ind": true,
+        "schedule_id": "2", 
+        "dq_rule_ids": null, 
+        "model_parameters": null, 
+        "database_name": "dl_asset_mgmt", 
+        "table_name": "tasset", 
+        "partition_keys": [
+        ], 
+        "recon_file_delim": "|", 
+        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
+      }, 
+      {
         "dataset_id": "12",
         "dataset_kind": "spark table",
         "catalog_ind": true,
