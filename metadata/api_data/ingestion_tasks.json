@@ -6,7 +6,7 @@
         "target_dataset_id": "11",
         "ingestion_pattern": {
             "loader": "spark",
-            "source_type": "delimited file", 
+            "source_type": "local delim file", 
             "target_type": "spark table", 
             "load_type": "full", 
             "idempotent": true 
