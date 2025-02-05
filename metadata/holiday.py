@@ -19,7 +19,7 @@ class Holiday:
         self.holiday_groups = holiday_groups
 
     @classmethod
-    def from_json(self, holiday_date):
+    def from_json(cls, holiday_date):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/holidays.json"
         json_key = "holidays"
 
@@ -29,7 +29,7 @@ class Holiday:
             if holidays:
                 for holiday in holidays:
                     if holiday["holiday_date"] == holiday_date:
-                        return self(**holiday)
+                        return cls(**holiday)
             else:
                 raise ValueError("Holiday data is invalid.")
         except ValueError as error:

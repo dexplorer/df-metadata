@@ -6,13 +6,15 @@ from utils import http_io as ufh
 
 import logging
 
+
 class DatasetKind(StrEnum):
-    GENERIC = 'generic'
-    DELIM_FILE = 'delim file'
-    LOCAL_DELIM_FILE = 'local delim file'
-    AWS_S3_DELIM_FILE = 'aws s3 delim file'
-    AZURE_ADLS_DELIM_FILE = 'azure adls delim file'
-    SPARK_TABLE = 'spark table'
+    GENERIC = "generic"
+    DELIM_FILE = "delim file"
+    LOCAL_DELIM_FILE = "local delim file"
+    AWS_S3_DELIM_FILE = "aws s3 delim file"
+    AZURE_ADLS_DELIM_FILE = "azure adls delim file"
+    SPARK_TABLE = "spark table"
+
 
 @dataclass
 class Feature:
@@ -88,7 +90,7 @@ class Dataset:
             self.model_parameters = model_parameters
 
     @classmethod
-    def from_json(self, dataset_id):
+    def from_json(cls, dataset_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
         # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
         json_key = "datasets"
@@ -101,7 +103,7 @@ class Dataset:
                 for dataset in datasets:
                     # print(dataset)
                     if dataset["dataset_id"] == dataset_id:
-                        return self(**dataset)
+                        return cls(**dataset)
             else:
                 raise ValueError("Dataset data is invalid.")
         except ValueError as error:
@@ -124,7 +126,12 @@ class DelimFileDataset(Dataset):
         file_delim: str,
     ):
         super().__init__(
-            dataset_id, dataset_kind, catalog_ind, schedule_id, dq_rule_ids, model_parameters
+            dataset_id,
+            dataset_kind,
+            catalog_ind,
+            schedule_id,
+            dq_rule_ids,
+            model_parameters,
         )
         # self.kind = DatasetKind.DELIM_FILE
         self.file_delim = file_delim
@@ -151,7 +158,7 @@ class LocalDelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind, 
+            dataset_kind,
             catalog_ind,
             schedule_id,
             dq_rule_ids,
@@ -187,7 +194,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind, 
+            dataset_kind,
             catalog_ind,
             schedule_id,
             dq_rule_ids,
@@ -215,7 +222,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind, 
+            dataset_kind,
             catalog_ind,
             schedule_id,
             dq_rule_ids,
@@ -224,6 +231,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         )
         # self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
         self.adls_uri = adls_uri
+
 
 @dataclass(kw_only=True)
 class SparkTableDataset(Dataset):
@@ -249,7 +257,7 @@ class SparkTableDataset(Dataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind, 
+            dataset_kind,
             catalog_ind,
             schedule_id,
             dq_rule_ids,
@@ -267,6 +275,7 @@ class SparkTableDataset(Dataset):
 
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
+
 
 def get_dataset_from_json(dataset_id):
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
@@ -290,4 +299,3 @@ def get_dataset_from_json(dataset_id):
     except ValueError as error:
         logging.error(error)
         raise
-

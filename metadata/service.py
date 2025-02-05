@@ -14,7 +14,7 @@ class Service:
         self.endpoint = endpoint
 
     @classmethod
-    def from_json(self, name):
+    def from_json(cls, name):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/services.json"
         json_key = "services"
 
@@ -25,7 +25,7 @@ class Service:
                 for service in services:
                     # print(service)
                     if service["name"] == name:
-                        return self(**service)
+                        return cls(**service)
             else:
                 raise ValueError("Service data is invalid.")
         except ValueError as error:

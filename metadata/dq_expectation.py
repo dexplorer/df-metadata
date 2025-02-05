@@ -16,7 +16,7 @@ class DQExpectation:
         self.ge_method = ge_method
 
     @classmethod
-    def from_json(self, exp_id):
+    def from_json(cls, exp_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dq_expectations.json"
         json_key = "dq_expectations"
 
@@ -27,7 +27,7 @@ class DQExpectation:
                 for dq_expectation in dq_expectations:
                     # print(dq_expectations)
                     if dq_expectation["exp_id"] == exp_id:
-                        return self(**dq_expectation)
+                        return cls(**dq_expectation)
             else:
                 raise ValueError("Data quality expectation data is invalid.")
         except ValueError as error:

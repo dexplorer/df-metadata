@@ -49,7 +49,7 @@ class IngestionWorkflow:
             self.post_ingestion_tasks = post_ingestion_tasks
 
     @classmethod
-    def from_json(self, ingestion_workflow_id):
+    def from_json(cls, ingestion_workflow_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/ingestion_workflows.json"
         json_key = "ingestion_workflows"
 
@@ -64,7 +64,7 @@ class IngestionWorkflow:
                         ingestion_workflow["ingestion_workflow_id"]
                         == ingestion_workflow_id
                     ):
-                        return self(**ingestion_workflow)
+                        return cls(**ingestion_workflow)
             else:
                 raise ValueError("Ingestion workflow data is invalid.")
         except ValueError as error:

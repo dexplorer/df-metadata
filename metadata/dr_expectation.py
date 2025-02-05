@@ -16,7 +16,7 @@ class DRExpectation:
         self.ge_method = ge_method
 
     @classmethod
-    def from_json(self, exp_id):
+    def from_json(cls, exp_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dr_expectations.json"
         json_key = "dr_expectations"
 
@@ -27,7 +27,7 @@ class DRExpectation:
                 for dr_expectation in dr_expectations:
                     # print(dr_expectations)
                     if dr_expectation["exp_id"] == exp_id:
-                        return self(**dr_expectation)
+                        return cls(**dr_expectation)
             else:
                 raise ValueError("Data reconciliation expectation data is invalid.")
         except ValueError as error:

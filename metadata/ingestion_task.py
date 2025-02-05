@@ -52,7 +52,7 @@ class IngestionTask:
             self.ingestion_pattern = ingestion_pattern
 
     @classmethod
-    def from_json(self, ingestion_task_id):
+    def from_json(cls, ingestion_task_id):
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/ingestion_tasks.json"
         json_key = "ingestion_tasks"
 
@@ -64,7 +64,7 @@ class IngestionTask:
                 for ingestion_task in ingestion_tasks:
                     # print(dataset)
                     if ingestion_task["ingestion_task_id"] == ingestion_task_id:
-                        return self(**ingestion_task)
+                        return cls(**ingestion_task)
             else:
                 raise ValueError("Ingestion task data is invalid.")
         except ValueError as error:

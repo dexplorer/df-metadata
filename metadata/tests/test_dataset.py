@@ -5,6 +5,7 @@ from metadata import dataset as ds
 @pytest.fixture(scope="module", name="dataset")
 def local_delim_file_dataset():
     dataset = ds.LocalDelimFileDataset(
+        kind="local delim file", 
         dataset_id="1",
         catalog_ind=True,
         schedule_id="1",
@@ -12,6 +13,8 @@ def local_delim_file_dataset():
         model_parameters=None,
         file_delim=",",
         file_path="APP_ROOT_DIR/data/acct_positions_yyyymmdd.csv",
+        recon_file_delim="|", 
+        recon_file_path="APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon"
     )
     print(dataset.file_path)
     return dataset
