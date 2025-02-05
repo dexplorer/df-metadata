@@ -5,8 +5,8 @@ from metadata import dataset as ds
 @pytest.fixture(scope="module", name="dataset")
 def local_delim_file_dataset():
     dataset = ds.LocalDelimFileDataset(
-        kind="local delim file", 
         dataset_id="1",
+        dataset_kind="local delim file", 
         catalog_ind=True,
         schedule_id="1",
         dq_rule_ids=None,
