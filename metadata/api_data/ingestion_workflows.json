@@ -31,6 +31,26 @@
             }
           }
         ]
+      },
+      {
+        "ingestion_workflow_id": "3",
+        "ingestion_task_id": "3",
+        "pre_ingestion_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "3"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "3"
+            }
+          }
+        ],
+        "post_ingestion_tasks": [
+        ]
       }
     ]
   }
