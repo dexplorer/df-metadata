@@ -67,7 +67,7 @@ class Workflow:
             if workflows:
                 for workflow in workflows:
                     # print(workflows)
-                    if workflow["ingestion_workflow_id"] == workflow_id:
+                    if workflow["workflow_id"] == workflow_id:
                         return cls(**workflow)
             else:
                 raise ValueError("Workflow data is invalid.")
