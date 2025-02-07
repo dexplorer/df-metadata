@@ -56,7 +56,7 @@ class DistributionTask:
             if distribution_tasks:
                 for distribution_task in distribution_tasks:
                     # print(distribution_task)
-                    if distribution_task["ingestion_task_id"] == distribution_task_id:
+                    if distribution_task["distribution_task_id"] == distribution_task_id:
                         return cls(**distribution_task)
             else:
                 raise ValueError("Distribution task data is invalid.")
