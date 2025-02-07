@@ -105,7 +105,7 @@ class DistributionWorkflow(Workflow):
         workflow_kind: str,
         pre_tasks: list[ManagementTask | dict],
         post_tasks: list[ManagementTask | dict],
-        ingestion_task_id: str,
+        distribution_task_id: str,
     ):
         super().__init__(
             workflow_id,
