@@ -14,7 +14,7 @@ class DatasetKind(StrEnum):
     AWS_S3_DELIM_FILE = "aws s3 delim file"
     AZURE_ADLS_DELIM_FILE = "azure adls delim file"
     SPARK_TABLE = "spark table"
-    SAPRK_SQL_FILE = "spark sql file"
+    SPARK_SQL_FILE = "spark sql file"
 
 class FileDelimiter(StrEnum):
     CSV_FILE = ","
