@@ -15,6 +15,9 @@ class DatasetKind(StrEnum):
     AZURE_ADLS_DELIM_FILE = "azure adls delim file"
     SPARK_TABLE = "spark table"
 
+class FileDelimiter(StrEnum):
+    CSV_FILE = ","
+    PIPE_DELIM_FILE = "|"
 
 @dataclass
 class Feature:
@@ -275,6 +278,31 @@ class SparkTableDataset(Dataset):
 
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
+
+
+@dataclass(kw_only=True)
+class SparkSqlFileDataset(Dataset):
+    sql_file_path: str
+
+    def __init__(
+        self,
+        dataset_id: str,
+        dataset_kind: str,
+        catalog_ind: bool,
+        schedule_id: str | None,
+        dq_rule_ids: list[str] | None,
+        model_parameters: ModelParameters | dict | None,
+        sql_file_path: str,
+    ):
+        super().__init__(
+            dataset_id,
+            dataset_kind,
+            catalog_ind,
+            schedule_id,
+            dq_rule_ids,
+            model_parameters,
+        )
+        self.sql_file_path = sql_file_path
 
 
 def get_dataset_from_json(dataset_id):

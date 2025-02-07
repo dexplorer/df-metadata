@@ -1,9 +1,9 @@
 {
     "ingestion_workflows": [
       {
-        "ingestion_workflow_id": "1",
+        "workflow_id": "1",
         "ingestion_task_id": "1",
-        "pre_ingestion_tasks": [
+        "pre_tasks": [
           {
             "name": "data quality",
             "required_parameters": {
@@ -17,13 +17,13 @@
             }
           }
         ],
-        "post_ingestion_tasks": [
+        "post_tasks": [
         ]
       },
       {
-        "ingestion_workflow_id": "2",
+        "workflow_id": "2",
         "ingestion_task_id": "2",
-        "pre_ingestion_tasks": [
+        "pre_tasks": [
           {
             "name": "data quality",
             "required_parameters": {
@@ -43,7 +43,7 @@
             }
           }
         ],
-        "post_ingestion_tasks": [
+        "post_tasks": [
           {
             "name": "data reconciliation",
             "required_parameters": {
@@ -53,9 +53,9 @@
         ]
       },
       {
-        "ingestion_workflow_id": "3",
+        "workflow_id": "3",
         "ingestion_task_id": "3",
-        "pre_ingestion_tasks": [
+        "pre_tasks": [
           {
             "name": "data quality",
             "required_parameters": {
@@ -69,7 +69,7 @@
             }
           }
         ],
-        "post_ingestion_tasks": [
+        "post_tasks": [
         ]
       }
     ]

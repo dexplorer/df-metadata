@@ -1,0 +1,16 @@
+{
+    "distribution_tasks": [
+      {
+        "distribution_task_id": "1",
+        "source_dataset_id": "4",
+        "target_dataset_id": "14",
+        "distribution_pattern": {
+            "extracter": "spark",
+            "source_type": "spark sql file", 
+            "target_type": "local delim file" 
+        } 
+      }
+    ]
+  }
+  
+  

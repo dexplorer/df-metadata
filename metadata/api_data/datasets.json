@@ -67,6 +67,15 @@
         "recon_file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.recon" 
       }, 
       {
+        "dataset_id": "4",
+        "dataset_kind": "spark sql file",
+        "catalog_ind": false,
+        "schedule_id": "2", 
+        "dq_rule_ids": null, 
+        "model_parameters": null, 
+        "sql_file_path": "APP_ROOT_DIR/sql/ext_asset_value_agg.sql"
+      },
+      {
         "dataset_id": "11",
         "dataset_kind": "spark table",
         "catalog_ind": true,
@@ -109,6 +118,18 @@
         ], 
         "recon_file_delim": "|", 
         "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
-      }
+      },
+      {
+        "dataset_id": "14",
+        "dataset_kind": "local delim file",
+        "catalog_ind": true,
+        "file_delim": "|",
+        "file_path": "APP_ROOT_DIR/data/asset_value_agg_yyyymmdd.dat", 
+        "schedule_id": "2", 
+        "dq_rule_ids": null, 
+        "model_parameters": null, 
+        "recon_file_delim": null, 
+        "recon_file_path": null 
+      } 
     ]
   }

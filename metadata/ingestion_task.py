@@ -42,7 +42,6 @@ class IngestionTask:
         target_dataset_id: str,
         ingestion_pattern: IngestionPattern | dict,
     ):
-        self.kind = "generic"
         self.ingestion_task_id = ingestion_task_id
         self.source_dataset_id = source_dataset_id
         self.target_dataset_id = target_dataset_id
@@ -62,7 +61,7 @@ class IngestionTask:
             # print(ingestion_tasks)
             if ingestion_tasks:
                 for ingestion_task in ingestion_tasks:
-                    # print(dataset)
+                    # print(ingestion_task)
                     if ingestion_task["ingestion_task_id"] == ingestion_task_id:
                         return cls(**ingestion_task)
             else:

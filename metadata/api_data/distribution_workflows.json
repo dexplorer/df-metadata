@@ -1,0 +1,24 @@
+{
+    "distribution_workflows": [
+      {
+        "workflow_id": "1",
+        "distribution_task_id": "1",
+        "pre_tasks": [
+        ],
+        "post_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "14"
+            }
+          },
+          {
+            "name": "data quality ml",
+            "required_parameters": {
+              "dataset_id": "14"
+            }
+          }
+        ]
+      }
+    ]
+  }
