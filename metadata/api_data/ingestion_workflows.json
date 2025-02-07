@@ -2,6 +2,7 @@
     "ingestion_workflows": [
       {
         "workflow_id": "1",
+        "workflow_kind": "ingestion", 
         "ingestion_task_id": "1",
         "pre_tasks": [
           {
@@ -22,6 +23,7 @@
       },
       {
         "workflow_id": "2",
+        "workflow_kind": "ingestion", 
         "ingestion_task_id": "2",
         "pre_tasks": [
           {
@@ -54,6 +56,7 @@
       },
       {
         "workflow_id": "3",
+        "workflow_kind": "ingestion", 
         "ingestion_task_id": "3",
         "pre_tasks": [
           {

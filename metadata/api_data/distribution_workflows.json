@@ -2,6 +2,7 @@
     "distribution_workflows": [
       {
         "workflow_id": "1",
+        "workflow_kind": "distribution", 
         "distribution_task_id": "1",
         "pre_tasks": [
         ],
