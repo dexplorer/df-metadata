@@ -53,6 +53,8 @@ class Workflow:
 
     @classmethod
     def from_json(cls, workflow_id, workflow_kind):
+        json_file_url = ""
+        json_key = "workflows"
         if workflow_kind == WorkflowKind.INGESTION:
             json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/ingestion_workflows.json"
             json_key = "ingestion_workflows"

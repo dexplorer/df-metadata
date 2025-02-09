@@ -5,19 +5,19 @@
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/assets_yyyymmdd.csv",
+        "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
         "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/assets_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon" 
       },
       {
         "dataset_id": "2",
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.csv",
+        "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         "schedule_id": "2",
         "dq_rule_ids": [], 
         "model_parameters": {
@@ -52,19 +52,19 @@
           "sample_size": 10000
         }, 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon" 
       },
       {
         "dataset_id": "3",
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
-        "file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.csv", 
+        "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv", 
         "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/customers_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon" 
       }, 
       {
         "dataset_id": "4",
@@ -73,7 +73,7 @@
         "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 
-        "sql_file_path": "APP_ROOT_DIR/sql/ext_asset_value_agg.sql"
+        "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql"
       },
       {
         "dataset_id": "11",
@@ -87,7 +87,7 @@
         "partition_keys": [
         ], 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon" 
       }, 
       {
         "dataset_id": "12",
@@ -102,7 +102,7 @@
           "effective_date" 
         ], 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon" 
       }, 
       {
         "dataset_id": "13",
@@ -117,14 +117,14 @@
           "effective_date" 
         ], 
         "recon_file_delim": "|", 
-        "recon_file_path": "APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon" 
+        "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon" 
       },
       {
         "dataset_id": "14",
         "dataset_kind": "local delim file",
         "catalog_ind": true,
         "file_delim": "|",
-        "file_path": "APP_ROOT_DIR/data/asset_value_agg_yyyymmdd.dat", 
+        "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat", 
         "schedule_id": "2", 
         "dq_rule_ids": null, 
         "model_parameters": null, 

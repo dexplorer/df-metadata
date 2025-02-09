@@ -12,9 +12,9 @@ def local_delim_file_dataset():
         dq_rule_ids=None,
         model_parameters=None,
         file_delim=",",
-        file_path="APP_ROOT_DIR/data/acct_positions_yyyymmdd.csv",
+        file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         recon_file_delim="|", 
-        recon_file_path="APP_ROOT_DIR/data/acct_positions_yyyymmdd.recon"
+        recon_file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
     )
     print(dataset.file_path)
     return dataset
@@ -34,11 +34,11 @@ def local_delim_file_dataset():
 #         print("this is teardown class, runs once")
 
 #     def test_resolve_file_path(self, dataset, date_str='20240101'):
-#         expected_output = "APP_ROOT_DIR/data/acct_positions_20240101.csv"
+#         expected_output = "APP_DATA_IN_DIR/acct_positions_20240101.csv"
 #         assert dataset.resolve_file_path(date_str) == expected_output
 
 test_data1 = [
-    ("20240101", "APP_ROOT_DIR/data/acct_positions_20240101.csv"),
+    ("20240101", "APP_DATA_IN_DIR/acct_positions_20240101.csv"),
 ]
 
 
