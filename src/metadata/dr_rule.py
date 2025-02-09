@@ -32,7 +32,7 @@ def get_dr_rules_by_dataset_id(dataset_id: str, dr_rules: list[DRRule]) -> list[
 
 
 def get_all_dr_rules_from_json() -> list[DRRule]:
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dr_rules.json"
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dr_rules.json"
     json_key = "dr_rules"
 
     response = ufh.get_http_response(url=json_file_url)

@@ -97,8 +97,8 @@ class Dataset:
 
     @classmethod
     def from_json(cls, dataset_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
-        # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json"
+        # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
         json_key = "datasets"
 
         response = ufh.get_http_response(url=json_file_url)
@@ -309,8 +309,8 @@ class SparkSqlFileDataset(Dataset):
 
 
 def get_dataset_from_json(dataset_id):
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/datasets.json"
-    # json_file_url = f"file:///workspaces/df-metadata/metadata/api_data/datasets.json"
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json"
+    # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
     json_key = "datasets"
 
     response = ufh.get_http_response(url=json_file_url)

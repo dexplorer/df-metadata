@@ -32,7 +32,7 @@ def get_dq_rules_by_dataset_id(dataset_id: str, dq_rules: list[DQRule]) -> list[
 
 
 def get_all_dq_rules_from_json() -> list[DQRule]:
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/dq_rules.json"
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dq_rules.json"
     json_key = "dq_rules"
 
     response = ufh.get_http_response(url=json_file_url)

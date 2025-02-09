@@ -31,7 +31,7 @@ class Schedule:
 
     @classmethod
     def from_json(cls, schedule_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/schedules.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/schedules.json"
         json_key = "schedules"
 
         response = ufh.get_http_response(url=json_file_url)

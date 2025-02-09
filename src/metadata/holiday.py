@@ -20,7 +20,7 @@ class Holiday:
 
     @classmethod
     def from_json(cls, holiday_date):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/holidays.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/holidays.json"
         json_key = "holidays"
 
         response = ufh.get_http_response(url=json_file_url)
@@ -38,7 +38,7 @@ class Holiday:
 
 
 def get_all_holidays_from_json() -> list[Holiday]:
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/holidays.json"
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/holidays.json"
     json_key = "holidays"
 
     response = ufh.get_http_response(url=json_file_url)

@@ -15,7 +15,7 @@ class Service:
 
     @classmethod
     def from_json(cls, name):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/services.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/services.json"
         json_key = "services"
 
         response = ufh.get_http_response(url=json_file_url)

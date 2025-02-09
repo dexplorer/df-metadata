@@ -46,7 +46,7 @@ class DistributionTask:
 
     @classmethod
     def from_json(cls, distribution_task_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/distribution_tasks.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/distribution_tasks.json"
         json_key = "distribution_tasks"
 
         response = ufh.get_http_response(url=json_file_url)

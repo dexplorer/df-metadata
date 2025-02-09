@@ -52,7 +52,7 @@ class IngestionTask:
 
     @classmethod
     def from_json(cls, ingestion_task_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/metadata/api_data/ingestion_tasks.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/ingestion_tasks.json"
         json_key = "ingestion_tasks"
 
         response = ufh.get_http_response(url=json_file_url)
