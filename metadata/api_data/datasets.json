@@ -127,7 +127,28 @@
         "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat", 
         "schedule_id": "2", 
         "dq_rule_ids": null, 
-        "model_parameters": null, 
+        "model_parameters": {
+          "features": [
+            {
+              "column": "asset_type",
+              "variable_type": "category",
+              "variable_sub_type": "nominal",
+              "encoding": "one hot"
+            },
+            {
+              "column": "asset_value_agg",
+              "variable_type": "numeric",
+              "variable_sub_type": "float",
+              "encoding": "numeric"
+            }
+          ],
+          "hist_data_snapshots": [
+            {
+              "snapshot": "t-1d"
+            }
+          ],
+          "sample_size": 10000
+        }, 
         "recon_file_delim": null, 
         "recon_file_path": null 
       } 
