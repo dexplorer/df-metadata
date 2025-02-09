@@ -1,22 +1,17 @@
-install: requirements.txt 
+install: pyproject.toml
 	pip install --upgrade pip &&\
-	pip install -r requirements.txt
-
-setup: 
-	# python setup.py install
-	pip install . 
+	pip install --editable . 
+	pip install .[test]
 
 lint:
-	pylint --disable=R,C *.py &&\
-	pylint --disable=R,C metadata/*.py &&\
-	pylint --disable=R,C metadata/tests/*.py
+	pylint --disable=R,C src/metadata/*.py &&\
+	pylint --disable=R,C tests/*.py
 
 test:
-	python -m pytest -vv --cov=metadata metadata/tests
+	python -m pytest -vv --cov=src/metadata tests
 
 format:
-	black *.py &&\
-	black metadata/*.py
-	black metadata/tests/*.py
+	black src/metadata/*.py &&\
+	black tests/*.py
 
-all: install setup lint format test 
+all: install lint format test 

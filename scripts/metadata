@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [[ ! $@ ]]; then
-# print help if no arguments are passed
-    python3 -m metadata -h
-else
-# invoke python module with the supplied arguments
-    python3 -m metadata $@
-fi

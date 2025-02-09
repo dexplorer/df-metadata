@@ -5,9 +5,11 @@ from utils import http_io as ufh
 
 import logging
 
+
 class WorkflowKind(StrEnum):
     INGESTION = "ingestion"
     DISTRIBUTION = "distribution"
+
 
 @dataclass
 class ManagementTask:
@@ -18,10 +20,11 @@ class ManagementTask:
         self.name = name
         self.required_parameters = required_parameters
 
+
 @dataclass
 class Workflow:
     workflow_id: str
-    workflow_kind: str 
+    workflow_kind: str
     pre_tasks: list[ManagementTask]
     post_tasks: list[ManagementTask]
 
@@ -37,17 +40,13 @@ class Workflow:
         if isinstance(pre_tasks, list) and all(
             [isinstance(task, dict) for task in pre_tasks]
         ):
-            self.pre_tasks = [
-                ManagementTask(**task) for task in pre_tasks
-            ]
+            self.pre_tasks = [ManagementTask(**task) for task in pre_tasks]
         else:
             self.pre_tasks = pre_tasks
         if isinstance(post_tasks, list) and all(
             [isinstance(task, dict) for task in post_tasks]
         ):
-            self.post_tasks = [
-                ManagementTask(**task) for task in post_tasks
-            ]
+            self.post_tasks = [ManagementTask(**task) for task in post_tasks]
         else:
             self.post_tasks = post_tasks
 
@@ -77,6 +76,7 @@ class Workflow:
             logging.error(error)
             raise
 
+
 @dataclass(kw_only=True)
 class IngestionWorkflow(Workflow):
     ingestion_task_id: str
@@ -97,6 +97,7 @@ class IngestionWorkflow(Workflow):
         )
         self.ingestion_task_id = ingestion_task_id
 
+
 @dataclass(kw_only=True)
 class DistributionWorkflow(Workflow):
     distribution_task_id: str
@@ -116,4 +117,3 @@ class DistributionWorkflow(Workflow):
             post_tasks,
         )
         self.distribution_task_id = distribution_task_id
-

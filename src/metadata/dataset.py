@@ -16,9 +16,11 @@ class DatasetKind(StrEnum):
     SPARK_TABLE = "spark table"
     SPARK_SQL_FILE = "spark sql file"
 
+
 class FileDelimiter(StrEnum):
     CSV_FILE = ","
     PIPE_DELIM_FILE = "|"
+
 
 @dataclass
 class Feature:

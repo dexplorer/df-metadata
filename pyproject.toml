@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools >= 64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metadata"
+version = "0.0.1"
+authors = [
+  { name="Rajakumaran Arivumani", email="author@example.com" },
+]
+description = "Data quality app package"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+#license = "MIT"
+#license-files = ["LICEN[CS]E*"]
+dependencies = [
+  # app specific 
+  "python-dateutil", 
+  "requests", 
+  # my packages
+  "utils @ git+https://github.com/dexplorer/utils",
+]
+keywords = ["data", "metadata", "etl", "elt", "framework", "governance"]
+
+[project.optional-dependencies]
+test = [
+  # standard dev tools
+  "pytest",
+  "pytest-cov",
+  "pylint",
+  "black",
+  "ipython",
+]
+
+[project.scripts]
+
+[project.urls]
+Homepage = "https://profile.rajakumaran.in"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/dexplorer/df-metadata.git"
+Issues = "https://github.com/dexplorer/df-metadata/issues"
+Changelog = "https://github.com/dexplorer/df-metadata/blob/master/CHANGELOG.md"

@@ -15,9 +15,9 @@ This is a metadata management application. It implements modules to serve out th
 
 ### Install
 
-- **Install via setuptools**
+- **Install via Makefile and pip**
   ```sh
-    python setup.py install
+    make install
   ```
 
 ### Imports
