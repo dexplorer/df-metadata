@@ -54,6 +54,24 @@
         "exp_id": "4",
         "rule_fail_action": "abort",
         "column": "ssn"
+      },
+      {
+        "rule_id": "8",
+        "dataset_id": "14",
+        "exp_id": "2",
+        "rule_fail_action": "abort",
+        "column": "asset_type",
+        "value_set": [
+          "equity",
+          "mutual fund"
+        ]
+      },
+      {
+        "rule_id": "9",
+        "dataset_id": "14",
+        "exp_id": "1",
+        "rule_fail_action": "abort",
+        "column": "asset_name"
       }
     ]
   }
