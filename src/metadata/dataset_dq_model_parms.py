@@ -26,7 +26,6 @@ class ModelParameters:
 
     def __init__(
         self,
-        dataset_id: str,
         features: list[Feature] | list[dict],
         hist_data_snapshots: list[DataSnapshot] | list[dict],
         sample_size: int,
