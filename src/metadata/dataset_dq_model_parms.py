@@ -33,7 +33,6 @@ class ModelParameters:
         if isinstance(features, list) and all(
             isinstance(feature, dict) for feature in features
         ):
-            self.dataset_id = dataset_id
             self.features = [Feature(**feature) for feature in features]
         else:
             self.features = features
