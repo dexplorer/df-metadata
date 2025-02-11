@@ -81,9 +81,7 @@
             }
           ],
           "sample_size": 10000
-        }, 
-        "recon_file_delim": null, 
-        "recon_file_path": null 
+        } 
       } 
     ]
   }
