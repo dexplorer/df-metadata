@@ -23,57 +23,13 @@ class FileDelimiter(StrEnum):
 
 
 @dataclass
-class Feature:
-    column: str
-    variable_type: str
-    variable_sub_type: str
-    encoding: str
-
-
-@dataclass
-class DataSnapshot:
-    snapshot: str
-
-
-@dataclass
-class ModelParameters:
-    features: list[Feature]
-    hist_data_snapshots: list[DataSnapshot]
-    sample_size: int
-
-    def __init__(
-        self,
-        features: list[Feature] | list[dict],
-        hist_data_snapshots: list[DataSnapshot] | list[dict],
-        sample_size: int,
-    ):
-        if isinstance(features, list) and all(
-            isinstance(feature, dict) for feature in features
-        ):
-            self.features = [Feature(**feature) for feature in features]
-        else:
-            self.features = features
-
-        if isinstance(hist_data_snapshots, list) and all(
-            isinstance(snapshot, dict) for snapshot in hist_data_snapshots
-        ):
-            self.hist_data_snapshots = [
-                DataSnapshot(**snapshot) for snapshot in hist_data_snapshots
-            ]
-        else:
-            self.hist_data_snapshots = hist_data_snapshots
-
-        self.sample_size = sample_size
-
-
-@dataclass
 class Dataset:
     kind: DatasetKind
     dataset_id: str
     catalog_ind: str
     schedule_id: str
-    dq_rule_ids: list[str]
-    model_parameters: ModelParameters
+    # dq_rule_ids: list[str]
+    # model_parameters: ModelParameters
 
     def __init__(
         self,
@@ -81,19 +37,19 @@ class Dataset:
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
     ):
         # self.kind = DatasetKind.GENERIC
         self.kind = DatasetKind(dataset_kind)
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
-        self.dq_rule_ids = dq_rule_ids
-        if isinstance(model_parameters, dict):
-            self.model_parameters = ModelParameters(**model_parameters)
-        else:
-            self.model_parameters = model_parameters
+        # self.dq_rule_ids = dq_rule_ids
+        # if isinstance(model_parameters, dict):
+        #     self.model_parameters = ModelParameters(**model_parameters)
+        # else:
+        #     self.model_parameters = model_parameters
 
     @classmethod
     def from_json(cls, dataset_id):
@@ -127,8 +83,8 @@ class DelimFileDataset(Dataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
     ):
         super().__init__(
@@ -136,8 +92,8 @@ class DelimFileDataset(Dataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
         )
         # self.kind = DatasetKind.DELIM_FILE
         self.file_delim = file_delim
@@ -155,8 +111,8 @@ class LocalDelimFileDataset(DelimFileDataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         file_path: str,
         recon_file_delim: str,
@@ -167,8 +123,8 @@ class LocalDelimFileDataset(DelimFileDataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
             file_delim,
         )
         # self.kind = DatasetKind.LOCAL_DELIM_FILE
@@ -193,8 +149,8 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         s3_uri: str,
     ):
@@ -203,8 +159,8 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
             file_delim,
         )
         # self.kind = DatasetKind.AWS_S3_DELIM_FILE
@@ -221,8 +177,8 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         adls_uri: str,
     ):
@@ -231,8 +187,8 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
             file_delim,
         )
         # self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
@@ -253,8 +209,8 @@ class SparkTableDataset(Dataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
@@ -266,8 +222,8 @@ class SparkTableDataset(Dataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
         )
         # self.kind = DatasetKind.SPARK_TABLE
         self.database_name = database_name
@@ -293,8 +249,8 @@ class SparkSqlFileDataset(Dataset):
         dataset_kind: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        dq_rule_ids: list[str] | None,
-        model_parameters: ModelParameters | dict | None,
+        # dq_rule_ids: list[str] | None,
+        # model_parameters: ModelParameters | dict | None,
         sql_file_path: str,
     ):
         super().__init__(
@@ -302,8 +258,8 @@ class SparkSqlFileDataset(Dataset):
             dataset_kind,
             catalog_ind,
             schedule_id,
-            dq_rule_ids,
-            model_parameters,
+            # dq_rule_ids,
+            # model_parameters,
         )
         self.sql_file_path = sql_file_path
 

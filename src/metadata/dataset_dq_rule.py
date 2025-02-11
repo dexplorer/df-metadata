@@ -6,21 +6,23 @@ import logging
 
 
 @dataclass
-class DQRule:
-    rule_id: str
+class DatasetDQRule:
     dataset_id: str
+    rule_id: str
     exp_id: str
     rule_fail_action: str
 
-    def __init__(self, rule_id, dataset_id, exp_id, rule_fail_action, **kwargs):
-        self.rule_id = rule_id
+    def __init__(self, dataset_id, rule_id, exp_id, rule_fail_action, **kwargs):
         self.dataset_id = dataset_id
+        self.rule_id = rule_id
         self.exp_id = exp_id
         self.rule_fail_action = rule_fail_action
         self.kwargs = kwargs
 
 
-def get_dq_rules_by_dataset_id(dataset_id: str, dq_rules: list[DQRule]) -> list[DQRule]:
+def get_dq_rules_by_dataset_id(
+    dataset_id: str, dq_rules: list[DatasetDQRule]
+) -> list[DatasetDQRule]:
     dq_rules_for_dataset = []
 
     for dq_rule in dq_rules:
@@ -31,8 +33,8 @@ def get_dq_rules_by_dataset_id(dataset_id: str, dq_rules: list[DQRule]) -> list[
     return dq_rules_for_dataset
 
 
-def get_all_dq_rules_from_json() -> list[DQRule]:
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dq_rules.json"
+def get_all_dq_rules_from_json() -> list[DatasetDQRule]:
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dq_rules.json"
     json_key = "dq_rules"
 
     response = ufh.get_http_response(url=json_file_url)
@@ -42,7 +44,7 @@ def get_all_dq_rules_from_json() -> list[DQRule]:
             # print(dq_rules)
             dq_rule_objects = []
             for dq_rule in dq_rules:
-                dq_rule_objects.append(DQRule(**dq_rule))
+                dq_rule_objects.append(DatasetDQRule(**dq_rule))
             return dq_rule_objects
         else:
             raise ValueError("Data quality rules data is invalid.")

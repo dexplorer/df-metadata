@@ -6,21 +6,23 @@ import logging
 
 
 @dataclass
-class DRRule:
-    rule_id: str
+class DatasetDRRule:
     dataset_id: str
+    rule_id: str
     exp_id: str
     rule_fail_action: str
 
-    def __init__(self, rule_id, dataset_id, exp_id, rule_fail_action, **kwargs):
-        self.rule_id = rule_id
+    def __init__(self, dataset_id, rule_id, exp_id, rule_fail_action, **kwargs):
         self.dataset_id = dataset_id
+        self.rule_id = rule_id
         self.exp_id = exp_id
         self.rule_fail_action = rule_fail_action
         self.kwargs = kwargs
 
 
-def get_dr_rules_by_dataset_id(dataset_id: str, dr_rules: list[DRRule]) -> list[DRRule]:
+def get_dr_rules_by_dataset_id(
+    dataset_id: str, dr_rules: list[DatasetDRRule]
+) -> list[DatasetDRRule]:
     dr_rules_for_dataset = []
 
     for dr_rule in dr_rules:
@@ -31,8 +33,8 @@ def get_dr_rules_by_dataset_id(dataset_id: str, dr_rules: list[DRRule]) -> list[
     return dr_rules_for_dataset
 
 
-def get_all_dr_rules_from_json() -> list[DRRule]:
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dr_rules.json"
+def get_all_dr_rules_from_json() -> list[DatasetDRRule]:
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dr_rules.json"
     json_key = "dr_rules"
 
     response = ufh.get_http_response(url=json_file_url)
@@ -42,7 +44,7 @@ def get_all_dr_rules_from_json() -> list[DRRule]:
             # print(dr_rules)
             dr_rule_objects = []
             for dr_rule in dr_rules:
-                dr_rule_objects.append(DRRule(**dr_rule))
+                dr_rule_objects.append(DatasetDRRule(**dr_rule))
             return dr_rule_objects
         else:
             raise ValueError("Data reconciliation rules data is invalid.")

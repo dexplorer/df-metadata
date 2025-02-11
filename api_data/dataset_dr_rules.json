@@ -1,8 +1,8 @@
 {
     "dr_rules": [
       {
-        "rule_id": "1",
         "dataset_id": "2",
+        "rule_id": "1",
         "exp_id": "1",
         "rule_fail_action": "abort",
         "column": "account_id", 
@@ -11,15 +11,15 @@
         ] 
       },
       {
-        "rule_id": "2",
         "dataset_id": "2",
+        "rule_id": "2",
         "exp_id": "2",
         "rule_fail_action": "abort",
         "column": "asset_id" 
       },
       {
-        "rule_id": "3",
         "dataset_id": "2",
+        "rule_id": "3",
         "exp_id": "3",
         "rule_fail_action": "abort",
         "column": "asset_value", 
@@ -28,8 +28,8 @@
         ] 
       },
       {
-        "rule_id": "4",
         "dataset_id": "2",
+        "rule_id": "4",
         "exp_id": "4",
         "rule_fail_action": "abort",
         "column": "account_id", 
@@ -38,8 +38,8 @@
         ] 
       },
       {
-        "rule_id": "5",
         "dataset_id": "12",
+        "rule_id": "5",
         "exp_id": "1",
         "rule_fail_action": "abort",
         "column": "account_id", 
@@ -48,15 +48,15 @@
         ] 
       },
       {
-        "rule_id": "6",
         "dataset_id": "12",
+        "rule_id": "6",
         "exp_id": "2",
         "rule_fail_action": "abort",
         "column": "asset_id" 
       },
       {
-        "rule_id": "7",
         "dataset_id": "12",
+        "rule_id": "7",
         "exp_id": "3",
         "rule_fail_action": "abort",
         "column": "asset_value", 
@@ -65,8 +65,8 @@
         ] 
       },
       {
-        "rule_id": "8",
         "dataset_id": "12",
+        "rule_id": "8",
         "exp_id": "4",
         "rule_fail_action": "abort",
         "column": "account_id", 

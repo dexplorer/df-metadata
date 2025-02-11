@@ -7,8 +7,6 @@
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "recon_file_delim": "|", 
         "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon" 
       },
@@ -19,38 +17,6 @@
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         "schedule_id": "2",
-        "dq_rule_ids": [], 
-        "model_parameters": {
-          "features": [
-            {
-              "column": "account_id",
-              "variable_type": "category",
-              "variable_sub_type": "nominal",
-              "encoding": "frequency"
-            },
-            {
-              "column": "asset_id",
-              "variable_type": "category",
-              "variable_sub_type": "nominal",
-              "encoding": "one hot"
-            },
-            {
-              "column": "asset_value",
-              "variable_type": "numeric",
-              "variable_sub_type": "float",
-              "encoding": "numeric"
-            }
-          ],
-          "hist_data_snapshots": [
-            {
-              "snapshot": "t-1d"
-            },
-            {
-              "snapshot": "lme"
-            }
-          ],
-          "sample_size": 10000
-        }, 
         "recon_file_delim": "|", 
         "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon" 
       },
@@ -61,8 +27,6 @@
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv", 
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "recon_file_delim": "|", 
         "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon" 
       }, 
@@ -71,8 +35,6 @@
         "dataset_kind": "spark sql file",
         "catalog_ind": false,
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql"
       },
       {
@@ -80,8 +42,6 @@
         "dataset_kind": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "database_name": "dl_asset_mgmt", 
         "table_name": "tasset", 
         "partition_keys": [
@@ -94,8 +54,6 @@
         "dataset_kind": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "database_name": "dl_asset_mgmt", 
         "table_name": "tacct_pos", 
         "partition_keys": [
@@ -109,8 +67,6 @@
         "dataset_kind": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": null, 
         "database_name": "dl_asset_mgmt", 
         "table_name": "tcustomer", 
         "partition_keys": [
@@ -126,29 +82,6 @@
         "file_delim": "|",
         "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat", 
         "schedule_id": "2", 
-        "dq_rule_ids": null, 
-        "model_parameters": {
-          "features": [
-            {
-              "column": "asset_type",
-              "variable_type": "category",
-              "variable_sub_type": "nominal",
-              "encoding": "one hot"
-            },
-            {
-              "column": "asset_value_agg",
-              "variable_type": "numeric",
-              "variable_sub_type": "float",
-              "encoding": "numeric"
-            }
-          ],
-          "hist_data_snapshots": [
-            {
-              "snapshot": "t-1d"
-            }
-          ],
-          "sample_size": 10000
-        }, 
         "recon_file_delim": null, 
         "recon_file_path": null 
       } 
