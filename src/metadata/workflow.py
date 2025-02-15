@@ -119,9 +119,15 @@ class DistributionWorkflow(Workflow):
         self.distribution_task_id = distribution_task_id
 
 
-def get_workflow_from_json(workflow_id: str):
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
+def get_workflow_from_json(workflow_id: str, workflow_kind: str):
+    json_file_url = ""
     json_key = "workflows"
+    if workflow_kind == WorkflowKind.INGESTION:
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/ingestion_workflows.json"
+        json_key = "ingestion_workflows"
+    elif workflow_kind == WorkflowKind.DISTRIBUTION:
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/distribution_workflows.json"
+        json_key = "distribution_workflows"
 
     response = ufh.get_http_response(url=json_file_url)
     try:
