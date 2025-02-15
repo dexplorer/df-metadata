@@ -2,7 +2,7 @@
     "datasets": [
       {
         "dataset_id": "1",
-        "dataset_kind": "local delim file",
+        "dataset_type": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
@@ -12,7 +12,7 @@
       },
       {
         "dataset_id": "2",
-        "dataset_kind": "local delim file",
+        "dataset_type": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
@@ -22,7 +22,7 @@
       },
       {
         "dataset_id": "3",
-        "dataset_kind": "local delim file",
+        "dataset_type": "local delim file",
         "catalog_ind": true,
         "file_delim": ",",
         "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv", 
@@ -32,14 +32,14 @@
       }, 
       {
         "dataset_id": "4",
-        "dataset_kind": "spark sql file",
+        "dataset_type": "spark sql file",
         "catalog_ind": false,
         "schedule_id": "2", 
         "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql"
       },
       {
         "dataset_id": "11",
-        "dataset_kind": "spark table",
+        "dataset_type": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
         "database_name": "dl_asset_mgmt", 
@@ -51,7 +51,7 @@
       }, 
       {
         "dataset_id": "12",
-        "dataset_kind": "spark table",
+        "dataset_type": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
         "database_name": "dl_asset_mgmt", 
@@ -64,7 +64,7 @@
       }, 
       {
         "dataset_id": "13",
-        "dataset_kind": "spark table",
+        "dataset_type": "spark table",
         "catalog_ind": true,
         "schedule_id": "2", 
         "database_name": "dl_asset_mgmt", 
@@ -77,7 +77,7 @@
       },
       {
         "dataset_id": "14",
-        "dataset_kind": "local delim file",
+        "dataset_type": "local delim file",
         "catalog_ind": true,
         "file_delim": "|",
         "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat", 
