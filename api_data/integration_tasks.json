@@ -1,0 +1,56 @@
+{
+    "integration_tasks": [
+      {
+        "task_id": "1",
+        "task_type": "ingestion",
+        "source_dataset_id": "1",
+        "target_dataset_id": "11",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "local delim file", 
+            "target_type": "spark table", 
+            "load_type": "full", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "2",
+        "task_type": "ingestion",
+        "source_dataset_id": "2",
+        "target_dataset_id": "12",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "local delim file", 
+            "target_type": "spark table", 
+            "load_type": "incremental", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "3",
+        "task_type": "ingestion",
+        "source_dataset_id": "3",
+        "target_dataset_id": "13",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "local delim file", 
+            "target_type": "spark table", 
+            "load_type": "incremental", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "11",
+        "task_type": "distribution",
+        "source_dataset_id": "4",
+        "target_dataset_id": "14",
+        "distribution_pattern": {
+            "extracter": "spark",
+            "source_type": "spark sql file", 
+            "target_type": "local delim file" 
+        } 
+      }      
+    ]
+  }
+  
+  
