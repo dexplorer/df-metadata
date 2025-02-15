@@ -117,3 +117,26 @@ class DistributionWorkflow(Workflow):
             post_tasks,
         )
         self.distribution_task_id = distribution_task_id
+
+
+def get_workflow_from_json(workflow_id: str):
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
+    json_key = "workflows"
+
+    response = ufh.get_http_response(url=json_file_url)
+    try:
+        workflows = response.json()[json_key]
+        # print(workflows)
+        if workflows:
+            for workflow in workflows:
+                # print(workflow)
+                if workflow["workflow_id"] == workflow_id:
+                    if workflow["workflow_kind"] == WorkflowKind.INGESTION:
+                        return IngestionWorkflow(**workflow)
+                    elif workflow["workflow_kind"] == WorkflowKind.DISTRIBUTION:
+                        return DistributionWorkflow(**workflow)
+        else:
+            raise ValueError("Workflow data is invalid.")
+    except ValueError as error:
+        logging.error(error)
+        raise
