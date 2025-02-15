@@ -242,6 +242,8 @@ def get_dataset_from_json(dataset_id):
                         return LocalDelimFileDataset(**dataset)
                     elif dataset["dataset_type"] == DatasetType.SPARK_TABLE:
                         return SparkTableDataset(**dataset)
+                    elif dataset["dataset_type"] == DatasetType.SPARK_SQL_FILE:
+                        return SparkSqlFileDataset(**dataset)
         else:
             raise ValueError("Dataset data is invalid.")
     except ValueError as error:
