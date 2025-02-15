@@ -36,7 +36,7 @@ class Dataset:
         catalog_ind: bool,
         schedule_id: str | None,
     ):
-        self.dataset_type = DatasetType(dataset_type)
+        self.dataset_type = dataset_type
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
