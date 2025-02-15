@@ -1,0 +1,100 @@
+{
+    "workflows": [
+      {
+        "workflow_id": "1",
+        "workflow_kind": "ingestion", 
+        "ingestion_task_id": "1",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "1"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "1"
+            }
+          }
+        ],
+        "post_tasks": [
+        ]
+      },
+      {
+        "workflow_id": "2",
+        "workflow_kind": "ingestion", 
+        "ingestion_task_id": "2",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "2"
+            }
+          },
+          {
+            "name": "data quality ml",
+            "required_parameters": {
+              "dataset_id": "2"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "2"
+            }
+          }
+        ],
+        "post_tasks": [
+          {
+            "name": "data reconciliation",
+            "required_parameters": {
+              "dataset_id": "12"
+            }
+          }
+        ]
+      },
+      {
+        "workflow_id": "3",
+        "workflow_kind": "ingestion", 
+        "ingestion_task_id": "3",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "3"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "3"
+            }
+          }
+        ],
+        "post_tasks": [
+        ]
+      },
+      {
+        "workflow_id": "11",
+        "workflow_kind": "distribution", 
+        "distribution_task_id": "11",
+        "pre_tasks": [
+        ],
+        "post_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "14"
+            }
+          },
+          {
+            "name": "data quality ml",
+            "required_parameters": {
+              "dataset_id": "14"
+            }
+          }
+        ]
+      }
+    ]
+  }

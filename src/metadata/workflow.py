@@ -6,7 +6,7 @@ from utils import http_io as ufh
 import logging
 
 
-class WorkflowKind(StrEnum):
+class WorkflowType(StrEnum):
     INGESTION = "ingestion"
     DISTRIBUTION = "distribution"
 
@@ -24,19 +24,19 @@ class ManagementTask:
 @dataclass
 class Workflow:
     workflow_id: str
-    workflow_kind: str
+    workflow_type: str
     pre_tasks: list[ManagementTask]
     post_tasks: list[ManagementTask]
 
     def __init__(
         self,
         workflow_id: str,
-        workflow_kind: str,
+        workflow_type: str,
         pre_tasks: list[ManagementTask | dict],
         post_tasks: list[ManagementTask | dict],
     ):
         self.workflow_id = workflow_id
-        self.workflow_kind = workflow_kind
+        self.workflow_type = workflow_type
         if isinstance(pre_tasks, list) and all(
             [isinstance(task, dict) for task in pre_tasks]
         ):
@@ -51,15 +51,9 @@ class Workflow:
             self.post_tasks = post_tasks
 
     @classmethod
-    def from_json(cls, workflow_id, workflow_kind):
-        json_file_url = ""
+    def from_json(cls, workflow_id):
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
         json_key = "workflows"
-        if workflow_kind == WorkflowKind.INGESTION:
-            json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/ingestion_workflows.json"
-            json_key = "ingestion_workflows"
-        elif workflow_kind == WorkflowKind.DISTRIBUTION:
-            json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/distribution_workflows.json"
-            json_key = "distribution_workflows"
 
         response = ufh.get_http_response(url=json_file_url)
         try:
@@ -84,14 +78,14 @@ class IngestionWorkflow(Workflow):
     def __init__(
         self,
         workflow_id: str,
-        workflow_kind: str,
+        workflow_type: str,
         pre_tasks: list[ManagementTask | dict],
         post_tasks: list[ManagementTask | dict],
         ingestion_task_id: str,
     ):
         super().__init__(
             workflow_id,
-            workflow_kind,
+            workflow_type,
             pre_tasks,
             post_tasks,
         )
@@ -105,29 +99,23 @@ class DistributionWorkflow(Workflow):
     def __init__(
         self,
         workflow_id: str,
-        workflow_kind: str,
+        workflow_type: str,
         pre_tasks: list[ManagementTask | dict],
         post_tasks: list[ManagementTask | dict],
         distribution_task_id: str,
     ):
         super().__init__(
             workflow_id,
-            workflow_kind,
+            workflow_type,
             pre_tasks,
             post_tasks,
         )
         self.distribution_task_id = distribution_task_id
 
 
-def get_workflow_from_json(workflow_id: str, workflow_kind: str):
-    json_file_url = ""
+def get_workflow_from_json(workflow_id: str):
+    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
     json_key = "workflows"
-    if workflow_kind == WorkflowKind.INGESTION:
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/ingestion_workflows.json"
-        json_key = "ingestion_workflows"
-    elif workflow_kind == WorkflowKind.DISTRIBUTION:
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/distribution_workflows.json"
-        json_key = "distribution_workflows"
 
     response = ufh.get_http_response(url=json_file_url)
     try:
@@ -137,9 +125,9 @@ def get_workflow_from_json(workflow_id: str, workflow_kind: str):
             for workflow in workflows:
                 # print(workflow)
                 if workflow["workflow_id"] == workflow_id:
-                    if workflow["workflow_kind"] == WorkflowKind.INGESTION:
+                    if workflow["workflow_type"] == WorkflowType.INGESTION:
                         return IngestionWorkflow(**workflow)
-                    elif workflow["workflow_kind"] == WorkflowKind.DISTRIBUTION:
+                    elif workflow["workflow_type"] == WorkflowType.DISTRIBUTION:
                         return DistributionWorkflow(**workflow)
         else:
             raise ValueError("Workflow data is invalid.")

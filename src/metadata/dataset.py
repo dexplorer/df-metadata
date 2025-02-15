@@ -7,7 +7,7 @@ from utils import http_io as ufh
 import logging
 
 
-class DatasetKind(StrEnum):
+class DatasetType(StrEnum):
     GENERIC = "generic"
     DELIM_FILE = "delim file"
     LOCAL_DELIM_FILE = "local delim file"
@@ -24,32 +24,22 @@ class FileDelimiter(StrEnum):
 
 @dataclass
 class Dataset:
-    kind: DatasetKind
+    dataset_type: DatasetType
     dataset_id: str
     catalog_ind: str
     schedule_id: str
-    # dq_rule_ids: list[str]
-    # model_parameters: ModelParameters
 
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
     ):
-        # self.kind = DatasetKind.GENERIC
-        self.kind = DatasetKind(dataset_kind)
+        self.dataset_type = DatasetType(dataset_type)
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
         self.schedule_id = schedule_id
-        # self.dq_rule_ids = dq_rule_ids
-        # if isinstance(model_parameters, dict):
-        #     self.model_parameters = ModelParameters(**model_parameters)
-        # else:
-        #     self.model_parameters = model_parameters
 
     @classmethod
     def from_json(cls, dataset_id):
@@ -80,22 +70,17 @@ class DelimFileDataset(Dataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
         )
-        # self.kind = DatasetKind.DELIM_FILE
         self.file_delim = file_delim
 
 
@@ -108,11 +93,9 @@ class LocalDelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         file_path: str,
         recon_file_delim: str,
@@ -120,14 +103,11 @@ class LocalDelimFileDataset(DelimFileDataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
             file_delim,
         )
-        # self.kind = DatasetKind.LOCAL_DELIM_FILE
         self.file_path = file_path
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
@@ -146,24 +126,19 @@ class AWSS3DelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         s3_uri: str,
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
             file_delim,
         )
-        # self.kind = DatasetKind.AWS_S3_DELIM_FILE
         self.s3_uri = s3_uri
 
 
@@ -174,24 +149,19 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         file_delim: str,
         adls_uri: str,
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
             file_delim,
         )
-        # self.kind = DatasetKind.AZURE_ADLS_DELIM_FILE
         self.adls_uri = adls_uri
 
 
@@ -206,11 +176,9 @@ class SparkTableDataset(Dataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
@@ -219,13 +187,10 @@ class SparkTableDataset(Dataset):
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
         )
-        # self.kind = DatasetKind.SPARK_TABLE
         self.database_name = database_name
         self.table_name = table_name
         self.partition_keys = partition_keys
@@ -246,20 +211,16 @@ class SparkSqlFileDataset(Dataset):
     def __init__(
         self,
         dataset_id: str,
-        dataset_kind: str,
+        dataset_type: str,
         catalog_ind: bool,
         schedule_id: str | None,
-        # dq_rule_ids: list[str] | None,
-        # model_parameters: ModelParameters | dict | None,
         sql_file_path: str,
     ):
         super().__init__(
             dataset_id,
-            dataset_kind,
+            dataset_type,
             catalog_ind,
             schedule_id,
-            # dq_rule_ids,
-            # model_parameters,
         )
         self.sql_file_path = sql_file_path
 
@@ -277,9 +238,9 @@ def get_dataset_from_json(dataset_id):
             for dataset in datasets:
                 # print(dataset)
                 if dataset["dataset_id"] == dataset_id:
-                    if dataset["dataset_kind"] == DatasetKind.LOCAL_DELIM_FILE:
+                    if dataset["dataset_type"] == DatasetType.LOCAL_DELIM_FILE:
                         return LocalDelimFileDataset(**dataset)
-                    elif dataset["dataset_kind"] == DatasetKind.SPARK_TABLE:
+                    elif dataset["dataset_type"] == DatasetType.SPARK_TABLE:
                         return SparkTableDataset(**dataset)
         else:
             raise ValueError("Dataset data is invalid.")
