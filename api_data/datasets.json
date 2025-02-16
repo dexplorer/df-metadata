@@ -46,7 +46,7 @@
       "table_name": "tasset",
       "partition_keys": [],
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
     },
     {
       "dataset_id": "12",
@@ -72,7 +72,7 @@
         "effective_date"
       ],
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
     },
     {
       "dataset_id": "14",
