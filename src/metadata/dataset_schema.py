@@ -8,9 +8,9 @@ import logging
 @dataclass
 class DatasetSchema:
     dataset_id: str
-    schema: dict[str:Any]
+    schema: list[dict]
 
-    def __init__(self, dataset_id: str, schema: dict[str:Any]):
+    def __init__(self, dataset_id: str, schema: list[dict]):
         self.dataset_id = dataset_id
         self.schema = schema
 
