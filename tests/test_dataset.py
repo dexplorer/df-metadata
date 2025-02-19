@@ -6,11 +6,9 @@ from metadata import dataset as ds
 def local_delim_file_dataset():
     dataset = ds.LocalDelimFileDataset(
         dataset_id="1",
-        dataset_kind="local delim file",
+        dataset_type="local delim file",
         catalog_ind=True,
         schedule_id="1",
-        dq_rule_ids=None,
-        model_parameters=None,
         file_delim=",",
         file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         recon_file_delim="|",

@@ -3,35 +3,69 @@
       {
         "dataset_id": "1",
         "schema": [
-            {"source column name": "effective_date", "target column name": "effective_date", "data type": "string"},
-            {"source column name": "asset_id", "target column name": "asset_id", "data type": "string"},
-            {"source column name": "asset_type", "target column name": "asset_type", "data type": "string"},
-            {"source column name": "asset_name", "target column name": "asset_name", "data type": "string"}
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_type", "data_type": "string"},
+            {"column_name": "asset_name", "data_type": "string"}
+        ]
+      },
+      {
+        "dataset_id": "11",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_type", "data_type": "string"},
+            {"column_name": "asset_name", "data_type": "string"}
         ]
       },
       {
         "dataset_id": "2",
         "schema": [
-            {"source column name": "effective_date", "target column name": "effective_date", "data type": "string"},
-            {"source column name": "account_id", "target column name": "account_id", "data type": "string"},
-            {"source column name": "asset_id", "target column name": "asset_id", "data type": "string"},
-            {"source column name": "asset_value", "target column name": "asset_value", "data type": "decimal{25,2}"}
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "account_id", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_value", "data_type": "decimal{25,2}"}
+        ]
+      },
+      {
+        "dataset_id": "12",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "account_id", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_value", "data_type": "decimal{25,2}"}
         ]
       },
       {
         "dataset_id": "3",
         "schema": [
-            {"source column name": "effective_date", "target column name": "effective_date", "data type": "string"},
-            {"source column name": "first_name", "target column name": "first_name", "data type": "string"},
-            {"source column name": "last_name", "target column name": "last_name", "data type": "string"},
-            {"source column name": "full_name", "target column name": "full_name", "data type": "string"},
-            {"source column name": "ssn", "target column name": "ssn", "data type": "string"},
-            {"source column name": "dob", "target column name": "dob", "data type": "string"},
-            {"source column name": "street_addr1", "target column name": "street_addr1", "data type": "string"},
-            {"source column name": "street_addr2", "target column name": "street_addr2", "data type": "string"},
-            {"source column name": "city", "target column name": "city", "data type": "string"},
-            {"source column name": "state", "target column name": "state", "data type": "string"},
-            {"source column name": "country", "target column name": "country", "data type": "string"}
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "first_name", "data_type": "string"},
+            {"column_name": "last_name", "data_type": "string"},
+            {"column_name": "full_name", "data_type": "string"},
+            {"column_name": "ssn", "data_type": "string"},
+            {"column_name": "dob", "data_type": "string"},
+            {"column_name": "street_addr1", "data_type": "string"},
+            {"column_name": "street_addr2", "data_type": "string"},
+            {"column_name": "city", "data_type": "string"},
+            {"column_name": "state", "data_type": "string"},
+            {"column_name": "country", "data_type": "string"}
+        ]
+      }, 
+      {
+        "dataset_id": "13",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "first_name", "data_type": "string"},
+            {"column_name": "last_name", "data_type": "string"},
+            {"column_name": "full_name", "data_type": "string"},
+            {"column_name": "ssn", "data_type": "string"},
+            {"column_name": "dob", "data_type": "string"},
+            {"column_name": "street_addr1", "data_type": "string"},
+            {"column_name": "street_addr2", "data_type": "string"},
+            {"column_name": "city", "data_type": "string"},
+            {"column_name": "state", "data_type": "string"},
+            {"column_name": "country", "data_type": "string"}
         ]
       }
     ]

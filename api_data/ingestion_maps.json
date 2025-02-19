@@ -1,0 +1,38 @@
+{
+    "ingestion_maps": [
+      {
+        "integration_task_id": "1",
+        "column_maps": [
+            {"source_column_name": "effective_date", "target_column_name": "effective_date"},
+            {"source_column_name": "asset_id", "target_column_name": "asset_id"},
+            {"source_column_name": "asset_type", "target_column_name": "asset_type"},
+            {"source_column_name": "asset_name", "target_column_name": "asset_name"}
+        ]
+      },
+      {
+        "integration_task_id": "2",
+        "schema": [
+            {"source_column_name": "effective_date", "target_column_name": "effective_date"},
+            {"source_column_name": "account_id", "target_column_name": "account_id"},
+            {"source_column_name": "asset_id", "target_column_name": "asset_id"},
+            {"source_column_name": "asset_value", "target_column_name": "asset_value"}
+        ]
+      },
+      {
+        "integration_task_id": "3",
+        "schema": [
+            {"source_column_name": "effective_date", "target_column_name": "effective_date"},
+            {"source_column_name": "first_name", "target_column_name": "first_name"},
+            {"source_column_name": "last_name", "target_column_name": "last_name"},
+            {"source_column_name": "full_name", "target_column_name": "full_name"},
+            {"source_column_name": "ssn", "target_column_name": "ssn"},
+            {"source_column_name": "dob", "target_column_name": "dob"},
+            {"source_column_name": "street_addr1", "target_column_name": "street_addr1"},
+            {"source_column_name": "street_addr2", "target_column_name": "street_addr2"},
+            {"source_column_name": "city", "target_column_name": "city"},
+            {"source_column_name": "state", "target_column_name": "state"},
+            {"source_column_name": "country", "target_column_name": "country"}
+        ]
+      }
+    ]
+}
