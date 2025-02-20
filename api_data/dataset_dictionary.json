@@ -1,0 +1,114 @@
+{
+    "dictionaries": [
+      {
+        "dataset_id": "1",
+        "column_attributes": [
+          {
+            "column_name": "effective_date",
+            "column_description": "The date which represents the data snapshot that was effective as of this date.",
+            "system_data_element_name": "Effective Date"
+          },
+          {
+            "column_name": "asset_id",
+            "column_description": "A unique identifier for the asset.",
+            "system_data_element_name": "Asset Identifier"
+          },
+          {
+            "column_name": "asset_type",
+            "column_description": "A set of values that indicate the type of the asset.",
+            "system_data_element_name": "Asset Type"
+          },
+          {
+            "column_name": "asset_name",
+            "column_description": "This is the asset name.",
+            "system_data_element_name": "Asset Name"
+          }
+        ]
+      },
+      {
+        "dataset_id": "2",
+        "column_attributes": [
+          {
+            "column_name": "effective_date",
+            "column_description": "The date which represents the data snapshot that was effective as of this date.",
+            "system_data_element_name": "Effective Date"
+          },
+          {
+            "column_name": "account_id",
+            "column_description": "A unique identifier for the account.",
+            "system_data_element_name": "Account Identifier"
+          },
+          {
+            "column_name": "asset_id",
+            "column_description": "A unique identifier for the asset.",
+            "system_data_element_name": "Asset Identifier"
+          },
+          {
+            "column_name": "asset_value",
+            "column_description": "This is the asset value in USD.",
+            "system_data_element_name": "Asset Value in USD"
+          }
+        ]
+      },
+      {
+        "dataset_id": "3",
+        "column_attributes": [
+          {
+            "column_name": "effective_date",
+            "column_description": "The date which represents the data snapshot that was effective as of this date.",
+            "system_data_element_name": "Effective Date"
+          },
+          {
+            "column_name": "first_name",
+            "column_description": "Customer first name",
+            "system_data_element_name": "Customer First Name"
+          },
+          {
+            "column_name": "last_name",
+            "column_description": "Customer last name",
+            "system_data_element_name": "Customer Last Name"
+          },
+          {
+            "column_name": "full_name",
+            "column_description": "Customer full name",
+            "system_data_element_name": "Customer Full Name"
+          },
+          {
+            "column_name": "ssn",
+            "column_description": "Customer's Social Security Number (SSN).",
+            "system_data_element_name": "Customer SSN"
+          },
+          {
+            "column_name": "dob",
+            "column_description": "Customer's birth date",
+            "system_data_element_name": "Customer DOB"
+          },
+          {
+            "column_name": "street_addr1",
+            "column_description": "Customer's home address - street address line 1",
+            "system_data_element_name": "Customer Home Address - Street Address Line 1"
+          },
+          {
+            "column_name": "street_addr2",
+            "column_description": "Customer's home address - street address line 2",
+            "system_data_element_name": "Customer Home Address - Street Address Line 2"
+          },
+          {
+            "column_name": "city",
+            "column_description": "Customer's home address - city",
+            "system_data_element_name": "Customer Home Address - City"
+          },
+          {
+            "column_name": "state",
+            "column_description": "Customer's home address - state",
+            "system_data_element_name": "Customer Home Address - State"
+          },
+          {
+            "column_name": "country",
+            "column_description": "Customer's home address - country",
+            "system_data_element_name": "Customer Home Address - Country"
+          }
+        ]
+      }
+    ]
+  }

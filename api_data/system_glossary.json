@@ -1,0 +1,84 @@
+{
+    "glossary_items": [
+      {
+        "system_data_element_name": "Effective Date",
+        "system_data_element_description": "The date which represents the data snapshot that was effective as of this date.",
+        "business_data_element_name": "As of Date"
+      },
+      {
+        "system_data_element_name": "Asset Identifier",
+        "system_data_element_description": "A unique identifier for the asset.",
+        "business_data_element_name": ""
+      },
+      {
+        "system_data_element_name": "Asset Type",
+        "system_data_element_description": "A set of values that indicate the type of the asset.",
+        "business_data_element_name": "Asset Type"
+      },
+      {
+        "system_data_element_name": "Asset Name",
+        "system_data_element_description": "This is the asset name.",
+        "business_data_element_name": "Asset Name"
+      },
+      {
+        "system_data_element_name": "Account Identifier",
+        "system_data_element_description": "A unique identifier for the account.",
+        "business_data_element_name": ""
+      },
+      {
+        "system_data_element_name": "Asset Value in USD",
+        "system_data_element_description": "This is the asset value in USD.",
+        "business_data_element_name": "Asset Value in USD"
+      },
+      {
+        "system_data_element_name": "Customer First Name",
+        "system_data_element_description": "Customer first name",
+        "business_data_element_name": "Customer First Name"
+      },
+      {
+        "system_data_element_name": "Customer Last Name",
+        "system_data_element_description": "Customer last name",
+        "business_data_element_name": "Customer Last Name"
+      },
+      {
+        "system_data_element_name": "Customer Full Name",
+        "system_data_element_description": "Customer full name",
+        "business_data_element_name": "Customer Full Name"
+      },
+      {
+        "system_data_element_name": "Customer SSN",
+        "system_data_element_description": "Customer's Social Security Number (SSN).",
+        "business_data_element_name": "Customer SSN"
+      },
+      {
+        "system_data_element_name": "Customer DOB",
+        "system_data_element_description": "Customer's birth date",
+        "business_data_element_name": "Customer DOB"
+      },
+      {
+        "system_data_element_name": "Customer Home Address - Street Address Line 1",
+        "system_data_element_description": "Customer's home address - street address line 1",
+        "business_data_element_name": "Customer Home Address - Street Address Line 1"
+      },
+      {
+        "system_data_element_name": "Customer Home Address - Street Address Line 2",
+        "system_data_element_description": "Customer's home address - street address line 2",
+        "business_data_element_name": "Customer Home Address - Street Address Line 2"
+      },
+      {
+        "system_data_element_name": "Customer Home Address - City",
+        "system_data_element_description": "Customer's home address - city",
+        "business_data_element_name": "Customer Home Address - City"
+      },
+      {
+        "system_data_element_name": "Customer Home Address - State",
+        "system_data_element_description": "Customer's home address - state",
+        "business_data_element_name": "Customer Home Address - State"
+      },
+      {
+        "system_data_element_name": "Customer Home Address - Country",
+        "system_data_element_description": "Customer's home address - country",
+        "business_data_element_name": "Customer Home Address - Country"
+      }
+    ]
+  }

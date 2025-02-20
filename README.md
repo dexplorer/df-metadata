@@ -4,13 +4,23 @@
 
 This is a metadata management application. It implements modules to serve out the following metadata and associated functionalities.
 
-* Datasets (includes Data Quality ML model parameters)
+* Datasets 
+  - Dataset Schemas
+  - Dataset Dictionaries
+* System Glossary
+* Business Glossary
 * Data Quality Expectations
 * Data Quality Rules
+* Data Quality ML model parameters
 * Schedules
 * Holidays
 * Data Reconciliation Expectations
 * Data Reconciliation Rules
+* Data Ingestion Workflows
+  - Ingestion Maps
+* Data Distribution Workflows
+* Data Sources
+* Data Consumers
 
 
 ### Install
@@ -55,5 +65,15 @@ This is a metadata management application. It implements modules to serve out th
 - **Data Reconciliation Rules**
   ```
   from metadata import dr_rules
+  ```  
+
+- **Data Ingestion and Distribution Workflows**
+  ```
+  from metadata import workflows
+  ```  
+
+- **Data Ingestion and Distribution Tasks**
+  ```
+  from metadata import integration_tasks
   ```  
 

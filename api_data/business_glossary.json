@@ -1,0 +1,74 @@
+{
+    "glossary_items": [
+      {
+        "business_data_element_name": "As of Date",
+        "business_data_element_description": "The date which represents the data snapshot that was effective as of this date.",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Asset Type",
+        "business_data_element_description": "A set of values that indicate the type of the asset.",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Asset Name",
+        "business_data_element_description": "This is the asset name.",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Asset Value in USD",
+        "business_data_element_description": "This is the asset value in USD.",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Customer First Name",
+        "business_data_element_description": "Customer first name",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer Last Name",
+        "business_data_element_description": "Customer last name",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer Full Name",
+        "business_data_element_description": "Customer full name",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer SSN",
+        "business_data_element_description": "Customer's Social Security Number (SSN).",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer DOB",
+        "business_data_element_description": "Customer's birth date",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer Home Address - Street Address Line 1",
+        "business_data_element_description": "Customer's home address - street address line 1",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer Home Address - Street Address Line 2",
+        "business_data_element_description": "Customer's home address - street address line 2",
+        "data_classification": "PII"
+      },
+      {
+        "business_data_element_name": "Customer Home Address - City",
+        "business_data_element_description": "Customer's home address - city",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Customer Home Address - State",
+        "business_data_element_description": "Customer's home address - state",
+        "data_classification": ""
+      },
+      {
+        "business_data_element_name": "Customer Home Address - Country",
+        "business_data_element_description": "Customer's home address - country",
+        "data_classification": ""
+      }
+    ]
+  }
