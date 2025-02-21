@@ -1,7 +1,7 @@
 {
     "workflows": [
       {
-        "workflow_id": "1",
+        "workflow_id": "workflow_1",
         "workflow_type": "ingestion", 
         "ingestion_task_id": "1",
         "pre_tasks": [
@@ -22,7 +22,7 @@
         ]
       },
       {
-        "workflow_id": "2",
+        "workflow_id": "workflow_2",
         "workflow_type": "ingestion", 
         "ingestion_task_id": "2",
         "pre_tasks": [
@@ -55,7 +55,7 @@
         ]
       },
       {
-        "workflow_id": "3",
+        "workflow_id": "workflow_3",
         "workflow_type": "ingestion", 
         "ingestion_task_id": "3",
         "pre_tasks": [
@@ -76,7 +76,7 @@
         ]
       },
       {
-        "workflow_id": "11",
+        "workflow_id": "workflow_11",
         "workflow_type": "distribution", 
         "distribution_task_id": "11",
         "pre_tasks": [
