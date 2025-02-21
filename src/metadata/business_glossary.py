@@ -10,7 +10,12 @@ class BusinessGlossaryItem:
     business_data_element_description: str
     data_classification: str
 
-    def __init__(self, business_data_element_name, business_data_element_description, data_classification):
+    def __init__(
+        self,
+        business_data_element_name,
+        business_data_element_description,
+        data_classification,
+    ):
         self.business_data_element_name = business_data_element_name
         self.business_data_element_description = business_data_element_description
         self.data_classification = data_classification
@@ -26,13 +31,17 @@ class BusinessGlossaryItem:
             if glossary_items:
                 for glossary_item in glossary_items:
                     # print(glossary_items)
-                    if glossary_item["business_data_element_name"] == business_data_element_name:
+                    if (
+                        glossary_item["business_data_element_name"]
+                        == business_data_element_name
+                    ):
                         return cls(**glossary_item)
             else:
                 raise ValueError("Business glossary data is invalid.")
         except ValueError as error:
             logging.error(error)
             raise
+
 
 def get_all_sys_glossary_items_from_json() -> list[BusinessGlossaryItem]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/business_glossary.json"
