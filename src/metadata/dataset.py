@@ -27,6 +27,8 @@ class Dataset:
     dataset_type: DatasetType
     dataset_id: str
     catalog_ind: str
+    catalog_asset_name: str
+    catalog_asset_domain: str
     schedule_id: str
 
     def __init__(
@@ -34,11 +36,15 @@ class Dataset:
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
     ):
         self.dataset_type = dataset_type
         self.dataset_id = dataset_id
         self.catalog_ind = catalog_ind
+        self.catalog_asset_name = catalog_asset_name
+        self.catalog_asset_domain = catalog_asset_domain
         self.schedule_id = schedule_id
 
     @classmethod
@@ -72,6 +78,8 @@ class DelimFileDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
     ):
@@ -79,6 +87,8 @@ class DelimFileDataset(Dataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
         )
         self.file_delim = file_delim
@@ -95,6 +105,8 @@ class LocalDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         file_path: str,
@@ -105,6 +117,8 @@ class LocalDelimFileDataset(DelimFileDataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -128,6 +142,8 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         s3_uri: str,
@@ -136,6 +152,8 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -151,6 +169,8 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         adls_uri: str,
@@ -159,6 +179,8 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -178,6 +200,8 @@ class SparkTableDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         database_name: str,
         table_name: str,
@@ -189,6 +213,8 @@ class SparkTableDataset(Dataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
         )
         self.database_name = database_name
@@ -213,6 +239,8 @@ class SparkSqlFileDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         catalog_ind: bool,
+        catalog_asset_name: str,
+        catalog_asset_domain: str,
         schedule_id: str | None,
         sql_file_path: str,
     ):
@@ -220,6 +248,8 @@ class SparkSqlFileDataset(Dataset):
             dataset_id,
             dataset_type,
             catalog_ind,
+            catalog_asset_name,
+            catalog_asset_domain,
             schedule_id,
         )
         self.sql_file_path = sql_file_path

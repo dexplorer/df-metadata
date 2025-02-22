@@ -1,44 +1,52 @@
 {
   "datasets": [
     {
-      "dataset_id": "1",
+      "dataset_id": "dataset_1",
       "dataset_type": "local delim file",
       "catalog_ind": true,
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
       "schedule_id": "2",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon",
+      "catalog_asset_name": "Asset",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "2",
+      "dataset_id": "dataset_2",
       "dataset_type": "local delim file",
       "catalog_ind": true,
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
       "schedule_id": "2",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon",
+      "catalog_asset_name": "Account Positions",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "3",
+      "dataset_id": "dataset_3",
       "dataset_type": "local delim file",
       "catalog_ind": true,
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv",
       "schedule_id": "2",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon",
+      "catalog_asset_name": "Customer",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "4",
+      "dataset_id": "dataset_4",
       "dataset_type": "spark sql file",
       "catalog_ind": false,
       "schedule_id": "2",
-      "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql"
+      "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql",
+      "catalog_asset_name": null,
+      "catalog_asset_domain": null
     },
     {
-      "dataset_id": "11",
+      "dataset_id": "dataset_11",
       "dataset_type": "spark table",
       "catalog_ind": true,
       "schedule_id": "2",
@@ -46,10 +54,12 @@
       "table_name": "tasset",
       "partition_keys": [],
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon",
+      "catalog_asset_name": "Asset",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "12",
+      "dataset_id": "dataset_12",
       "dataset_type": "spark table",
       "catalog_ind": true,
       "schedule_id": "2",
@@ -59,10 +69,12 @@
         "effective_date"
       ],
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon",
+      "catalog_asset_name": "Account Positions",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "13",
+      "dataset_id": "dataset_13",
       "dataset_type": "spark table",
       "catalog_ind": true,
       "schedule_id": "2",
@@ -72,17 +84,21 @@
         "effective_date"
       ],
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
+      "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon",
+      "catalog_asset_name": "Customer",
+      "catalog_asset_domain": "Asset Management"
     },
     {
-      "dataset_id": "14",
+      "dataset_id": "dataset_14",
       "dataset_type": "local delim file",
       "catalog_ind": true,
       "file_delim": "|",
       "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat",
       "schedule_id": "2",
       "recon_file_delim": null,
-      "recon_file_path": null
+      "recon_file_path": null,
+      "catalog_asset_name": "Asset Aggregates",
+      "catalog_asset_domain": "Asset Management"
     }
   ]
 }
