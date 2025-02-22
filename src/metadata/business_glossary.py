@@ -43,7 +43,7 @@ class BusinessGlossaryItem:
             raise
 
 
-def get_all_sys_glossary_items_from_json() -> list[BusinessGlossaryItem]:
+def get_all_bus_glossary_items_from_json() -> list[BusinessGlossaryItem]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/business_glossary.json"
     json_key = "glossary_items"
 
