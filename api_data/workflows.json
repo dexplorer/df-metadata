@@ -8,13 +8,13 @@
           {
             "name": "data quality",
             "required_parameters": {
-              "dataset_id": "1"
+              "dataset_id": "dataset_1"
             }
           },
           {
             "name": "data profile",
             "required_parameters": {
-              "dataset_id": "1"
+              "dataset_id": "dataset_1"
             }
           }
         ],
@@ -29,19 +29,19 @@
           {
             "name": "data quality",
             "required_parameters": {
-              "dataset_id": "2"
+              "dataset_id": "dataset_2"
             }
           },
           {
             "name": "data quality ml",
             "required_parameters": {
-              "dataset_id": "2"
+              "dataset_id": "dataset_2"
             }
           },
           {
             "name": "data profile",
             "required_parameters": {
-              "dataset_id": "2"
+              "dataset_id": "dataset_2"
             }
           }
         ],
@@ -49,7 +49,7 @@
           {
             "name": "data reconciliation",
             "required_parameters": {
-              "dataset_id": "12"
+              "dataset_id": "dataset_12"
             }
           }
         ]
@@ -62,13 +62,13 @@
           {
             "name": "data quality",
             "required_parameters": {
-              "dataset_id": "3"
+              "dataset_id": "dataset_3"
             }
           },
           {
             "name": "data profile",
             "required_parameters": {
-              "dataset_id": "3"
+              "dataset_id": "dataset_3"
             }
           }
         ],
@@ -85,13 +85,13 @@
           {
             "name": "data quality",
             "required_parameters": {
-              "dataset_id": "14"
+              "dataset_id": "dataset_14"
             }
           },
           {
             "name": "data quality ml",
             "required_parameters": {
-              "dataset_id": "14"
+              "dataset_id": "dataset_14"
             }
           }
         ]

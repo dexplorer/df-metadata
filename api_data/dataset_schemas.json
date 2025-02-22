@@ -1,7 +1,7 @@
 {
     "dataset_schemas": [
       {
-        "dataset_id": "1",
+        "dataset_id": "dataset_1",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "asset_id", "data_type": "string"},
@@ -10,7 +10,7 @@
         ]
       },
       {
-        "dataset_id": "11",
+        "dataset_id": "dataset_11",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "asset_id", "data_type": "string"},
@@ -19,7 +19,7 @@
         ]
       },
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "account_id", "data_type": "string"},
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "dataset_id": "12",
+        "dataset_id": "dataset_12",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "account_id", "data_type": "string"},
@@ -37,7 +37,7 @@
         ]
       },
       {
-        "dataset_id": "3",
+        "dataset_id": "dataset_3",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "first_name", "data_type": "string"},
@@ -53,7 +53,7 @@
         ]
       }, 
       {
-        "dataset_id": "13",
+        "dataset_id": "dataset_13",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "first_name", "data_type": "string"},

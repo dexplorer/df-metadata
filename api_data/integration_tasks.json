@@ -1,7 +1,7 @@
 {
     "integration_tasks": [
       {
-        "task_id": "1",
+        "task_id": "integration_task_1",
         "task_type": "ingestion",
         "source_dataset_id": "1",
         "target_dataset_id": "11",
@@ -14,7 +14,7 @@
         } 
       },
       {
-        "task_id": "2",
+        "task_id": "integration_task_2",
         "task_type": "ingestion",
         "source_dataset_id": "2",
         "target_dataset_id": "12",
@@ -27,7 +27,7 @@
         } 
       },
       {
-        "task_id": "3",
+        "task_id": "integration_task_3",
         "task_type": "ingestion",
         "source_dataset_id": "3",
         "target_dataset_id": "13",
@@ -40,7 +40,7 @@
         } 
       },
       {
-        "task_id": "11",
+        "task_id": "integration_task_11",
         "task_type": "distribution",
         "source_dataset_id": "4",
         "target_dataset_id": "14",

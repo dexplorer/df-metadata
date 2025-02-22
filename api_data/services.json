@@ -15,6 +15,22 @@
       {
         "name": "data profile",
         "endpoint": "dp_app_api"
+      },
+      {
+        "name": "data catalog",
+        "endpoint": "dc_app_api"
+      },
+      {
+        "name": "data lineage",
+        "endpoint": "dl_app_api"
+      },
+      {
+        "name": "data ingestion",
+        "endpoint": "ingest_app_api"
+      },
+      {
+        "name": "data distribution",
+        "endpoint": "dist_app_api"
       }
     ]
   }

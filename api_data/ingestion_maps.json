@@ -1,7 +1,7 @@
 {
     "ingestion_maps": [
       {
-        "integration_task_id": "1",
+        "integration_task_id": "integration_task_1",
         "column_maps": [
             {"source_column_name": "effective_date", "target_column_name": "effective_date"},
             {"source_column_name": "asset_id", "target_column_name": "asset_id"},
@@ -10,7 +10,7 @@
         ]
       },
       {
-        "integration_task_id": "2",
+        "integration_task_id": "integration_task_2",
         "schema": [
             {"source_column_name": "effective_date", "target_column_name": "effective_date"},
             {"source_column_name": "account_id", "target_column_name": "account_id"},
@@ -19,7 +19,7 @@
         ]
       },
       {
-        "integration_task_id": "3",
+        "integration_task_id": "integration_task_3",
         "schema": [
             {"source_column_name": "effective_date", "target_column_name": "effective_date"},
             {"source_column_name": "first_name", "target_column_name": "first_name"},

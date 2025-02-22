@@ -1,7 +1,7 @@
 {
     "dictionaries": [
       {
-        "dataset_id": "1",
+        "dataset_id": "dataset_1",
         "column_attributes": [
           {
             "column_name": "effective_date",
@@ -26,7 +26,7 @@
         ]
       },
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "column_attributes": [
           {
             "column_name": "effective_date",
@@ -51,7 +51,7 @@
         ]
       },
       {
-        "dataset_id": "3",
+        "dataset_id": "dataset_3",
         "column_attributes": [
           {
             "column_name": "effective_date",

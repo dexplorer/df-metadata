@@ -1,7 +1,7 @@
 {
     "dr_rules": [
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "rule_id": "1",
         "exp_id": "1",
         "rule_fail_action": "abort",
@@ -11,14 +11,14 @@
         ] 
       },
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "rule_id": "2",
         "exp_id": "2",
         "rule_fail_action": "abort",
         "column": "asset_id" 
       },
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "rule_id": "3",
         "exp_id": "3",
         "rule_fail_action": "abort",
@@ -28,7 +28,7 @@
         ] 
       },
       {
-        "dataset_id": "2",
+        "dataset_id": "dataset_2",
         "rule_id": "4",
         "exp_id": "4",
         "rule_fail_action": "abort",
@@ -38,7 +38,7 @@
         ] 
       },
       {
-        "dataset_id": "12",
+        "dataset_id": "dataset_12",
         "rule_id": "5",
         "exp_id": "1",
         "rule_fail_action": "abort",
@@ -48,14 +48,14 @@
         ] 
       },
       {
-        "dataset_id": "12",
+        "dataset_id": "dataset_12",
         "rule_id": "6",
         "exp_id": "2",
         "rule_fail_action": "abort",
         "column": "asset_id" 
       },
       {
-        "dataset_id": "12",
+        "dataset_id": "dataset_12",
         "rule_id": "7",
         "exp_id": "3",
         "rule_fail_action": "abort",
@@ -65,7 +65,7 @@
         ] 
       },
       {
-        "dataset_id": "12",
+        "dataset_id": "dataset_12",
         "rule_id": "8",
         "exp_id": "4",
         "rule_fail_action": "abort",
