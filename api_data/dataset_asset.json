@@ -12,49 +12,49 @@
         "dataset_id": "dataset_2",
         "catalog_asset_name": "Account Positions",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       },
       {
         "dataset_id": "dataset_3",
         "catalog_asset_name": "Customer",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       },
       {
         "dataset_id": "dataset_11",
         "catalog_asset_name": "Asset",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       },
       {
         "dataset_id": "dataset_12",
         "catalog_asset_name": "Account Positions",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       },
       {
         "dataset_id": "dataset_13",
         "catalog_asset_name": "Customer",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       },
       {
         "dataset_id": "dataset_14",
         "catalog_asset_name": "Asset Aggregates",
         "catalog_asset_domain": "Asset Management",
-        "business_owner": ["Rajakumaran Arivumani"], 
-        "technology_owner": ["Rajakumaran Arivumani"], 
-        "data_steward": ["Rajakumaran Arivumani"] 
+        "business_owners": ["Rajakumaran Arivumani"], 
+        "technology_owners": ["Rajakumaran Arivumani"], 
+        "data_stewards": ["Rajakumaran Arivumani"] 
       }
     ]
   }
