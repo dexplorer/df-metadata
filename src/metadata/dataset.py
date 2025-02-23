@@ -8,50 +8,41 @@ import logging
 
 
 class DatasetType(StrEnum):
-    GENERIC = "generic"
-    DELIM_FILE = "delim file"
-    LOCAL_DELIM_FILE = "local delim file"
-    AWS_S3_DELIM_FILE = "aws s3 delim file"
-    AZURE_ADLS_DELIM_FILE = "azure adls delim file"
-    SPARK_TABLE = "spark table"
-    SPARK_SQL_FILE = "spark sql file"
+    GENERIC = 'generic'
+    DELIM_FILE = 'delim file'
+    LOCAL_DELIM_FILE = 'local delim file'
+    AWS_S3_DELIM_FILE = 'aws s3 delim file'
+    AZURE_ADLS_DELIM_FILE = 'azure adls delim file'
+    SPARK_TABLE = 'spark table'
+    SPARK_SQL_FILE = 'spark sql file'
 
 
 class FileDelimiter(StrEnum):
-    CSV_FILE = ","
-    PIPE_DELIM_FILE = "|"
+    CSV_FILE = ','
+    PIPE_DELIM_FILE = '|'
 
 
 @dataclass
 class Dataset:
-    dataset_type: DatasetType
     dataset_id: str
-    catalog_ind: str
-    catalog_asset_name: str
-    catalog_asset_domain: str
+    dataset_type: DatasetType
     schedule_id: str
 
     def __init__(
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
     ):
         self.dataset_type = dataset_type
         self.dataset_id = dataset_id
-        self.catalog_ind = catalog_ind
-        self.catalog_asset_name = catalog_asset_name
-        self.catalog_asset_domain = catalog_asset_domain
         self.schedule_id = schedule_id
 
     @classmethod
     def from_json(cls, dataset_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json"
+        json_file_url = 'https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json'
         # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
-        json_key = "datasets"
+        json_key = 'datasets'
 
         response = ufh.get_http_response(url=json_file_url)
         try:
@@ -60,7 +51,7 @@ class Dataset:
             if datasets:
                 for dataset in datasets:
                     # print(dataset)
-                    if dataset["dataset_id"] == dataset_id:
+                    if dataset['dataset_id'] == dataset_id:
                         return cls(**dataset)
             else:
                 raise ValueError("Dataset data is invalid.")
@@ -77,18 +68,12 @@ class DelimFileDataset(Dataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
     ):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
         )
         self.file_delim = file_delim
@@ -104,9 +89,6 @@ class LocalDelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         file_path: str,
@@ -116,9 +98,6 @@ class LocalDelimFileDataset(DelimFileDataset):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -127,10 +106,10 @@ class LocalDelimFileDataset(DelimFileDataset):
         self.recon_file_path = recon_file_path
 
     def resolve_file_path(self, date_str):
-        return self.file_path.replace("yyyymmdd", date_str)
+        return self.file_path.replace('yyyymmdd', date_str)
 
     def resolve_recon_file_path(self, date_str):
-        return self.recon_file_path.replace("yyyymmdd", date_str)
+        return self.recon_file_path.replace('yyyymmdd', date_str)
 
 
 @dataclass(kw_only=True)
@@ -141,9 +120,6 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         s3_uri: str,
@@ -151,9 +127,6 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -168,9 +141,6 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         file_delim: str,
         adls_uri: str,
@@ -178,9 +148,6 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
             file_delim,
         )
@@ -199,9 +166,6 @@ class SparkTableDataset(Dataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         database_name: str,
         table_name: str,
@@ -212,9 +176,6 @@ class SparkTableDataset(Dataset):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
         )
         self.database_name = database_name
@@ -227,7 +188,7 @@ class SparkTableDataset(Dataset):
         return f"{self.database_name}.{self.table_name}"
 
     def resolve_recon_file_path(self, date_str):
-        return self.recon_file_path.replace("yyyymmdd", date_str)
+        return self.recon_file_path.replace('yyyymmdd', date_str)
 
 
 @dataclass(kw_only=True)
@@ -238,27 +199,21 @@ class SparkSqlFileDataset(Dataset):
         self,
         dataset_id: str,
         dataset_type: str,
-        catalog_ind: bool,
-        catalog_asset_name: str,
-        catalog_asset_domain: str,
         schedule_id: str | None,
         sql_file_path: str,
     ):
         super().__init__(
             dataset_id,
             dataset_type,
-            catalog_ind,
-            catalog_asset_name,
-            catalog_asset_domain,
             schedule_id,
         )
         self.sql_file_path = sql_file_path
 
 
 def get_dataset_from_json(dataset_id):
-    json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json"
+    json_file_url = 'https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/datasets.json'
     # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
-    json_key = "datasets"
+    json_key = 'datasets'
 
     response = ufh.get_http_response(url=json_file_url)
     try:
@@ -267,12 +222,12 @@ def get_dataset_from_json(dataset_id):
         if datasets:
             for dataset in datasets:
                 # print(dataset)
-                if dataset["dataset_id"] == dataset_id:
-                    if dataset["dataset_type"] == DatasetType.LOCAL_DELIM_FILE:
+                if dataset['dataset_id'] == dataset_id:
+                    if dataset['dataset_type'] == DatasetType.LOCAL_DELIM_FILE:
                         return LocalDelimFileDataset(**dataset)
-                    elif dataset["dataset_type"] == DatasetType.SPARK_TABLE:
+                    elif dataset['dataset_type'] == DatasetType.SPARK_TABLE:
                         return SparkTableDataset(**dataset)
-                    elif dataset["dataset_type"] == DatasetType.SPARK_SQL_FILE:
+                    elif dataset['dataset_type'] == DatasetType.SPARK_SQL_FILE:
                         return SparkSqlFileDataset(**dataset)
         else:
             raise ValueError("Dataset data is invalid.")
