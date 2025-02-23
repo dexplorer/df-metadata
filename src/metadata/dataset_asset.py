@@ -18,6 +18,7 @@ class DatasetAsset:
         self.catalog_asset_name = catalog_asset_name
         self.catalog_asset_domain = catalog_asset_domain
         self.business_owners = business_owners
+        self.technology_owners = technology_owners
         self.data_stewards = data_stewards
 
 
