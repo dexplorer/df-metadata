@@ -22,7 +22,7 @@ dependencies = [
   "python-dateutil", 
   "requests", 
   # my packages
-  "utils @ git+https://github.com/dexplorer/utils",
+  #"utils @ git+https://github.com/dexplorer/utils",
 ]
 keywords = ["data", "metadata", "etl", "elt", "framework", "governance"]
 
