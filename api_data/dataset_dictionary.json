@@ -2,6 +2,7 @@
     "dictionaries": [
       {
         "dataset_id": "dataset_1",
+        "dataset_description": "This dataset contains the assets data.", 
         "column_attributes": [
           {
             "column_name": "effective_date",
@@ -27,6 +28,7 @@
       },
       {
         "dataset_id": "dataset_2",
+        "dataset_description": "This dataset contains the account positions data.", 
         "column_attributes": [
           {
             "column_name": "effective_date",
@@ -52,6 +54,7 @@
       },
       {
         "dataset_id": "dataset_3",
+        "dataset_description": "This dataset contains the customer data.", 
         "column_attributes": [
           {
             "column_name": "effective_date",

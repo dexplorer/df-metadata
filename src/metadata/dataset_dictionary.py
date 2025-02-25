@@ -14,14 +14,17 @@ class DictionaryItem:
 @dataclass
 class DatasetDictionary:
     dataset_id: str
+    dataset_description: str
     column_attributes: list[DictionaryItem]
 
     def __init__(
         self,
         dataset_id: str,
+        dataset_description: str,
         column_attributes: list[DictionaryItem] | list[dict],
     ):
         self.dataset_id = dataset_id
+        self.dataset_description = dataset_description
 
         if isinstance(column_attributes, list) and all(
             isinstance(column_attribute, dict) for column_attribute in column_attributes

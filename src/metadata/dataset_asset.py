@@ -13,14 +13,21 @@ class DatasetAsset:
     technology_owners: list[str]
     data_stewards: list[str]
 
-    def __init__(self, dataset_id, catalog_asset_name, catalog_asset_domain, business_owners, technology_owners, data_stewards):
+    def __init__(
+        self,
+        dataset_id,
+        catalog_asset_name,
+        catalog_asset_domain,
+        business_owners,
+        technology_owners,
+        data_stewards,
+    ):
         self.dataset_id = dataset_id
         self.catalog_asset_name = catalog_asset_name
         self.catalog_asset_domain = catalog_asset_domain
         self.business_owners = business_owners
         self.technology_owners = technology_owners
         self.data_stewards = data_stewards
-
 
     @classmethod
     def from_json(cls, dataset_id):
@@ -41,4 +48,3 @@ class DatasetAsset:
         except ValueError as error:
             logging.error(error)
             raise
-

@@ -7,9 +7,6 @@ def local_delim_file_dataset():
     dataset = ds.LocalDelimFileDataset(
         dataset_id="1",
         dataset_type="local delim file",
-        catalog_ind=True,
-        catalog_asset_name="Account Positions",
-        catalog_asset_domain="Asset Management", 
         schedule_id="1",
         file_delim=",",
         file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
