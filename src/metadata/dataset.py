@@ -27,16 +27,19 @@ class Dataset:
     dataset_id: str
     dataset_type: DatasetType
     schedule_id: str
+    data_source_id: str
 
     def __init__(
         self,
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
     ):
         self.dataset_type = dataset_type
         self.dataset_id = dataset_id
         self.schedule_id = schedule_id
+        self.data_source_id = data_source_id
 
     @classmethod
     def from_json(cls, dataset_id):
@@ -69,12 +72,14 @@ class DelimFileDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         file_delim: str,
     ):
         super().__init__(
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
         )
         self.file_delim = file_delim
 
@@ -90,6 +95,7 @@ class LocalDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         file_delim: str,
         file_path: str,
         recon_file_delim: str,
@@ -99,6 +105,7 @@ class LocalDelimFileDataset(DelimFileDataset):
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
             file_delim,
         )
         self.file_path = file_path
@@ -111,26 +118,37 @@ class LocalDelimFileDataset(DelimFileDataset):
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
 
+    def get_physical_name(self):
+        return self.file_path
+
 
 @dataclass(kw_only=True)
 class AWSS3DelimFileDataset(DelimFileDataset):
-    s3_uri: str
+    file_uri: str
+    recon_file_delim: str
+    recon_file_uri: str
 
     def __init__(
         self,
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         file_delim: str,
-        s3_uri: str,
+        file_uri: str,
+        recon_file_delim: str,
+        recon_file_uri: str,
     ):
         super().__init__(
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
             file_delim,
         )
-        self.s3_uri = s3_uri
+        self.file_uri = file_uri
+        self.recon_file_delim = recon_file_delim
+        self.recon_file_uri = recon_file_uri
 
 
 @dataclass(kw_only=True)
@@ -142,6 +160,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         file_delim: str,
         adls_uri: str,
     ):
@@ -149,6 +168,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
             file_delim,
         )
         self.adls_uri = adls_uri
@@ -167,6 +187,7 @@ class SparkTableDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
@@ -177,6 +198,7 @@ class SparkTableDataset(Dataset):
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
         )
         self.database_name = database_name
         self.table_name = table_name
@@ -190,6 +212,9 @@ class SparkTableDataset(Dataset):
     def resolve_recon_file_path(self, date_str):
         return self.recon_file_path.replace("yyyymmdd", date_str)
 
+    def get_physical_name(self):
+        return self.get_qualified_table_name()
+
 
 @dataclass(kw_only=True)
 class SparkSqlFileDataset(Dataset):
@@ -200,12 +225,14 @@ class SparkSqlFileDataset(Dataset):
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
+        data_source_id: str,
         sql_file_path: str,
     ):
         super().__init__(
             dataset_id,
             dataset_type,
             schedule_id,
+            data_source_id,
         )
         self.sql_file_path = sql_file_path
 

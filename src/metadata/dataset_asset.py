@@ -31,7 +31,7 @@ class DatasetAsset:
 
     @classmethod
     def from_json(cls, dataset_id):
-        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_asset.json"
+        json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_assets.json"
         json_key = "assets"
 
         response = ufh.get_http_response(url=json_file_url)
