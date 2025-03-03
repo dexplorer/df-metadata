@@ -14,6 +14,11 @@
         "data_source_id": "data_source_3",
         "data_source_name": "Demographic",
         "data_source_user": "ds_user_demographic"
+      }, 
+      {
+        "data_source_id": "data_source_4",
+        "data_source_name": "Data Platform",
+        "data_source_user": "ds_user_data_platform"
       }
     ]
 }

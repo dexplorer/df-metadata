@@ -6,6 +6,7 @@
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_1",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
     },
@@ -15,6 +16,7 @@
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_2",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
     },
@@ -24,6 +26,7 @@
       "file_delim": ",",
       "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_3",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
     },
@@ -31,12 +34,14 @@
       "dataset_id": "dataset_4",
       "dataset_type": "spark sql file",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
       "sql_file_path": "APP_SQL_SCRIPT_DIR/ext_asset_value_agg.sql"
     },
     {
       "dataset_id": "dataset_11",
       "dataset_type": "spark table",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
       "database_name": "dl_asset_mgmt",
       "table_name": "tasset",
       "partition_keys": [],
@@ -47,6 +52,7 @@
       "dataset_id": "dataset_12",
       "dataset_type": "spark table",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
       "database_name": "dl_asset_mgmt",
       "table_name": "tacct_pos",
       "partition_keys": [
@@ -59,6 +65,7 @@
       "dataset_id": "dataset_13",
       "dataset_type": "spark table",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
       "database_name": "dl_asset_mgmt",
       "table_name": "tcustomer",
       "partition_keys": [
@@ -73,6 +80,7 @@
       "file_delim": "|",
       "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
       "recon_file_delim": null,
       "recon_file_path": null
     }, 
@@ -82,6 +90,7 @@
       "file_delim": ",",
       "file_uri": "s3://S3_BUCKET/S3_PREFIX/assets_yyyymmdd.csv", 
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_1",
       "recon_file_delim": "|",
       "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/assets_yyyymmdd.recon"
     },
@@ -91,6 +100,7 @@
       "file_delim": ",",
       "file_uri": "s3://S3_BUCKET/S3_PREFIX/acct_positions_yyyymmdd.csv",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_2",
       "recon_file_delim": "|",
       "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/acct_positions_yyyymmdd.recon"
     },
@@ -100,6 +110,7 @@
       "file_delim": ",",
       "file_uri": "s3://S3_BUCKET/S3_PREFIX/customers_yyyymmdd.csv",
       "schedule_id": "schedule_2",
+      "data_source_id": "data_source_3",
       "recon_file_delim": "|",
       "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/customers_yyyymmdd.recon"
     }

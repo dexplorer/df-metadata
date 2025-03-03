@@ -34,7 +34,7 @@ class Dataset:
         dataset_id: str,
         dataset_type: str,
         schedule_id: str | None,
-        data_source_id: str,
+        data_source_id: str | None,
     ):
         self.dataset_type = dataset_type
         self.dataset_id = dataset_id
