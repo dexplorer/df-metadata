@@ -3,8 +3,8 @@
       {
         "task_id": "integration_task_1",
         "task_type": "ingestion",
-        "source_dataset_id": "1",
-        "target_dataset_id": "11",
+        "source_dataset_id": "dataset_1",
+        "target_dataset_id": "dataset_11",
         "ingestion_pattern": {
             "loader": "spark",
             "source_type": "local delim file", 
@@ -16,8 +16,8 @@
       {
         "task_id": "integration_task_2",
         "task_type": "ingestion",
-        "source_dataset_id": "2",
-        "target_dataset_id": "12",
+        "source_dataset_id": "dataset_2",
+        "target_dataset_id": "dataset_12",
         "ingestion_pattern": {
             "loader": "spark",
             "source_type": "local delim file", 
@@ -29,8 +29,8 @@
       {
         "task_id": "integration_task_3",
         "task_type": "ingestion",
-        "source_dataset_id": "3",
-        "target_dataset_id": "13",
+        "source_dataset_id": "dataset_3",
+        "target_dataset_id": "dataset_13",
         "ingestion_pattern": {
             "loader": "spark",
             "source_type": "local delim file", 
@@ -42,8 +42,8 @@
       {
         "task_id": "integration_task_11",
         "task_type": "distribution",
-        "source_dataset_id": "4",
-        "target_dataset_id": "14",
+        "source_dataset_id": "dataset_4",
+        "target_dataset_id": "dataset_14",
         "distribution_pattern": {
             "extracter": "spark",
             "source_type": "spark sql file", 
