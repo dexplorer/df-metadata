@@ -3,7 +3,7 @@
       {
         "workflow_id": "workflow_1",
         "workflow_type": "ingestion", 
-        "ingestion_task_id": "1",
+        "ingestion_task_id": "integration_task_1",
         "pre_tasks": [
           {
             "name": "data quality",
@@ -24,7 +24,7 @@
       {
         "workflow_id": "workflow_2",
         "workflow_type": "ingestion", 
-        "ingestion_task_id": "2",
+        "ingestion_task_id": "integration_task_2",
         "pre_tasks": [
           {
             "name": "data quality",
@@ -57,7 +57,7 @@
       {
         "workflow_id": "workflow_3",
         "workflow_type": "ingestion", 
-        "ingestion_task_id": "3",
+        "ingestion_task_id": "integration_task_3",
         "pre_tasks": [
           {
             "name": "data quality",
@@ -78,7 +78,7 @@
       {
         "workflow_id": "workflow_11",
         "workflow_type": "distribution", 
-        "distribution_task_id": "11",
+        "distribution_task_id": "integration_task_11",
         "pre_tasks": [
         ],
         "post_tasks": [
