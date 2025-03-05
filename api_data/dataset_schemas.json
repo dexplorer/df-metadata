@@ -24,7 +24,7 @@
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "account_id", "data_type": "string"},
             {"column_name": "asset_id", "data_type": "string"},
-            {"column_name": "asset_value", "data_type": "decimal{25,2}"}
+            {"column_name": "asset_value", "data_type": "decimal(25,2)"}
         ]
       },
       {
@@ -33,7 +33,7 @@
             {"column_name": "effective_date", "data_type": "string"},
             {"column_name": "account_id", "data_type": "string"},
             {"column_name": "asset_id", "data_type": "string"},
-            {"column_name": "asset_value", "data_type": "decimal{25,2}"}
+            {"column_name": "asset_value", "data_type": "decimal(25,2)"}
         ]
       },
       {
