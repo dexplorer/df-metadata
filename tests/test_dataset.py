@@ -8,6 +8,7 @@ def local_delim_file_dataset():
         dataset_id="1",
         dataset_type="local delim file",
         schedule_id="1",
+        data_source_id="data_source_1",
         file_delim=",",
         file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         recon_file_delim="|",
