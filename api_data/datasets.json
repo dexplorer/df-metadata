@@ -88,31 +88,31 @@
       "dataset_id": "dataset_101",
       "dataset_type": "aws s3 delim file",
       "file_delim": ",",
-      "file_uri": "s3://S3_BUCKET/S3_PREFIX/assets_yyyymmdd.csv", 
+      "file_uri": "APP_DATA_IN_URI/assets_yyyymmdd.csv", 
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_1",
       "recon_file_delim": "|",
-      "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/assets_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
     },
     {
       "dataset_id": "dataset_102",
       "dataset_type": "aws s3 delim file",
       "file_delim": ",",
-      "file_uri": "s3://S3_BUCKET/S3_PREFIX/acct_positions_yyyymmdd.csv",
+      "file_uri": "APP_DATA_IN_URI/acct_positions_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_2",
       "recon_file_delim": "|",
-      "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/acct_positions_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
     },
     {
       "dataset_id": "dataset_103",
       "dataset_type": "aws s3 delim file",
       "file_delim": ",",
-      "file_uri": "s3://S3_BUCKET/S3_PREFIX/customers_yyyymmdd.csv",
+      "file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_3",
       "recon_file_delim": "|",
-      "recon_file_uri": "s3://S3_BUCKET/S3_PREFIX/customers_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
     }
   ]
 }

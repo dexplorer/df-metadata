@@ -22,13 +22,21 @@ dependencies = [
   "python-dateutil", 
   "requests", 
   # my packages
-  "utils", 
+  #"utils", 
   # my packages
   #"utils @ git+https://github.com/dexplorer/utils",
 ]
 keywords = ["data", "metadata", "etl", "elt", "framework", "governance"]
 
 [project.optional-dependencies]
+my-packages-local = [
+  # my packages (installed locally)
+  "utils",
+]
+my-packages-container = [
+  # my packages (source in container)
+  "utils @ file:///packages/utils",
+]
 test = [
   # standard dev tools
   "pytest",
@@ -37,6 +45,12 @@ test = [
   "black",
   "ipython",
 ]
+all-dev = [
+  "metadata[my-packages-local, test]"
+  ]
+all = [
+  "metadata[my-packages-container]"
+  ]
 
 [project.scripts]
 

@@ -1,7 +1,6 @@
-install: pyproject.toml
+install-dev: pyproject.toml
 	pip install --upgrade pip &&\
-	pip install --editable . 
-	pip install --editable .[test]
+	pip install --editable .[all-dev]
 
 lint:
 	pylint --disable=R,C src/metadata/*.py &&\
@@ -14,4 +13,4 @@ format:
 	black src/metadata/*.py &&\
 	black tests/*.py
 
-all: install lint format test 
+all: install-dev lint format test 

@@ -147,8 +147,19 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             file_delim,
         )
         self.file_uri = file_uri
+
         self.recon_file_delim = recon_file_delim
         self.recon_file_uri = recon_file_uri
+
+    def resolve_file_uri(self, date_str: str, data_source_user: str):
+        return "s3://" + self.file_uri.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
+        )
+
+    def resolve_recon_file_uri(self, date_str, data_source_user: str):
+        return "s3://" + self.recon_file_uri.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
+        )
 
 
 @dataclass(kw_only=True)
