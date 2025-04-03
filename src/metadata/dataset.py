@@ -112,11 +112,15 @@ class LocalDelimFileDataset(DelimFileDataset):
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
 
-    def resolve_file_path(self, date_str):
-        return self.file_path.replace("yyyymmdd", date_str)
+    def resolve_file_path(self, date_str, data_source_user: str):
+        return self.file_path.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_DIR", f"APP_DATA_IN_DIR/{data_source_user}"
+        )
 
-    def resolve_recon_file_path(self, date_str):
-        return self.recon_file_path.replace("yyyymmdd", date_str)
+    def resolve_recon_file_path(self, date_str, data_source_user: str):
+        return self.recon_file_path.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_DIR", f"APP_DATA_IN_DIR/{data_source_user}"
+        )
 
     def get_physical_name(self):
         return self.file_path
