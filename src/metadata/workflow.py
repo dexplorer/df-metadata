@@ -129,6 +129,8 @@ def get_workflow_from_json(workflow_id: str):
                         return IngestionWorkflow(**workflow)
                     elif workflow["workflow_type"] == WorkflowType.DISTRIBUTION:
                         return DistributionWorkflow(**workflow)
+                    else:
+                        raise RuntimeError("Workflow type is not expected.")
         else:
             raise ValueError("Workflow data is invalid.")
     except ValueError as error:

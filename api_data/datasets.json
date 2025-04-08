@@ -155,11 +155,11 @@
       "dataset_id": "dataset_1014",
       "dataset_type": "aws s3 delim file",
       "file_delim": "|",
-      "file_path": "APP_DATA_OUT_URI/asset_value_agg_yyyymmdd.dat",
+      "file_uri": "APP_DATA_OUT_URI/asset_value_agg_yyyymmdd.dat",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_4",
       "recon_file_delim": null,
-      "recon_file_path": null
+      "recon_file_uri": null
     } 
 
   ]
