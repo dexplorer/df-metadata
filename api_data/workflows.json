@@ -95,6 +95,102 @@
             }
           }
         ]
+      }, 
+      {
+        "workflow_id": "workflow_1",
+        "workflow_type": "ingestion", 
+        "ingestion_task_id": "integration_task_101",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "dataset_101"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "dataset_101"
+            }
+          }
+        ],
+        "post_tasks": [
+        ]
+      },
+      {
+        "workflow_id": "workflow_102",
+        "workflow_type": "ingestion", 
+        "ingestion_task_id": "integration_task_102",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "dataset_102"
+            }
+          },
+          {
+            "name": "data quality ml",
+            "required_parameters": {
+              "dataset_id": "dataset_102"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "dataset_102"
+            }
+          }
+        ],
+        "post_tasks": [
+          {
+            "name": "data reconciliation",
+            "required_parameters": {
+              "dataset_id": "dataset_1012"
+            }
+          }
+        ]
+      },
+      {
+        "workflow_id": "workflow_103",
+        "workflow_type": "ingestion", 
+        "ingestion_task_id": "integration_task_103",
+        "pre_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "dataset_103"
+            }
+          },
+          {
+            "name": "data profile",
+            "required_parameters": {
+              "dataset_id": "dataset_103"
+            }
+          }
+        ],
+        "post_tasks": [
+        ]
+      },
+      {
+        "workflow_id": "workflow_1011",
+        "workflow_type": "distribution", 
+        "distribution_task_id": "integration_task_1011",
+        "pre_tasks": [
+        ],
+        "post_tasks": [
+          {
+            "name": "data quality",
+            "required_parameters": {
+              "dataset_id": "dataset_1014"
+            }
+          },
+          {
+            "name": "data quality ml",
+            "required_parameters": {
+              "dataset_id": "dataset_1014"
+            }
+          }
+        ]
       }
     ]
   }

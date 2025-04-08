@@ -113,6 +113,54 @@
       "data_source_id": "data_source_3",
       "recon_file_delim": "|",
       "recon_file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
-    }
+    }, 
+    {
+      "dataset_id": "dataset_1011",
+      "dataset_type": "spark table",
+      "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
+      "database_name": "dl_asset_mgmt",
+      "table_name": "tasset",
+      "partition_keys": [],
+      "recon_file_delim": "|",
+      "recon_file_path": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
+    },
+    {
+      "dataset_id": "dataset_1012",
+      "dataset_type": "spark table",
+      "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
+      "database_name": "dl_asset_mgmt",
+      "table_name": "tacct_pos",
+      "partition_keys": [
+        "effective_date"
+      ],
+      "recon_file_delim": "|",
+      "recon_file_path": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
+    },
+    {
+      "dataset_id": "dataset_1013",
+      "dataset_type": "spark table",
+      "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
+      "database_name": "dl_asset_mgmt",
+      "table_name": "tcustomer",
+      "partition_keys": [
+        "effective_date"
+      ],
+      "recon_file_delim": "|",
+      "recon_file_path": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
+    },
+    {
+      "dataset_id": "dataset_1014",
+      "dataset_type": "aws s3 delim file",
+      "file_delim": "|",
+      "file_path": "APP_DATA_OUT_URI/asset_value_agg_yyyymmdd.dat",
+      "schedule_id": "schedule_2",
+      "data_source_id": "data_source_4",
+      "recon_file_delim": null,
+      "recon_file_path": null
+    } 
+
   ]
 }

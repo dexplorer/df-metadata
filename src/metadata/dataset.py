@@ -267,6 +267,8 @@ def get_dataset_from_json(dataset_id):
                 if dataset["dataset_id"] == dataset_id:
                     if dataset["dataset_type"] == DatasetType.LOCAL_DELIM_FILE:
                         return LocalDelimFileDataset(**dataset)
+                    elif dataset["dataset_type"] == DatasetType.AWS_S3_DELIM_FILE:
+                        return AWSS3DelimFileDataset(**dataset)
                     elif dataset["dataset_type"] == DatasetType.SPARK_TABLE:
                         return SparkTableDataset(**dataset)
                     elif dataset["dataset_type"] == DatasetType.SPARK_SQL_FILE:

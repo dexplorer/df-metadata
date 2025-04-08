@@ -49,7 +49,58 @@
             "source_type": "spark sql file", 
             "target_type": "local delim file" 
         } 
+      },
+      {
+        "task_id": "integration_task_101",
+        "task_type": "ingestion",
+        "source_dataset_id": "dataset_101",
+        "target_dataset_id": "dataset_1011",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "aws s3 delim file", 
+            "target_type": "aws emr spark table", 
+            "load_type": "full", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "integration_task_102",
+        "task_type": "ingestion",
+        "source_dataset_id": "dataset_102",
+        "target_dataset_id": "dataset_1012",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "aws s3 delim file", 
+            "target_type": "aws emr spark table", 
+            "load_type": "incremental", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "integration_task_103",
+        "task_type": "ingestion",
+        "source_dataset_id": "dataset_103",
+        "target_dataset_id": "dataset_1013",
+        "ingestion_pattern": {
+            "loader": "spark",
+            "source_type": "aws s3 delim file", 
+            "target_type": "aws emr spark table", 
+            "load_type": "incremental", 
+            "idempotent": true 
+        } 
+      },
+      {
+        "task_id": "integration_task_1011",
+        "task_type": "distribution",
+        "source_dataset_id": "dataset_4",
+        "target_dataset_id": "dataset_1014",
+        "distribution_pattern": {
+            "extracter": "spark",
+            "source_type": "spark sql file", 
+            "target_type": "aws s3 delim file" 
+        } 
       }      
+
     ]
   }
   
