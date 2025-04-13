@@ -72,8 +72,15 @@
         "exp_id": "1",
         "rule_fail_action": "abort",
         "column": "asset_name"
+      },
+      {
+        "dataset_id": "dataset_103",
+        "rule_id": "10",
+        "exp_id": "4",
+        "rule_fail_action": "abort",
+        "column": "ssn"
       }
-    ]
+  ]
   }
   
   

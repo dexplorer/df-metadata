@@ -156,12 +156,16 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         self.recon_file_uri = recon_file_uri
 
     def resolve_file_uri(self, date_str: str, data_source_user: str):
-        return "s3://" + self.file_uri.replace("yyyymmdd", date_str).replace(
+        # return "s3://" + self.file_uri.replace("yyyymmdd", date_str).replace(
+        #     "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
+        return self.file_uri.replace("yyyymmdd", date_str).replace(
             "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
         )
 
     def resolve_recon_file_uri(self, date_str, data_source_user: str):
-        return "s3://" + self.recon_file_uri.replace("yyyymmdd", date_str).replace(
+        # return "s3://" + self.recon_file_uri.replace("yyyymmdd", date_str).replace(
+        #     "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
+        return self.recon_file_uri.replace("yyyymmdd", date_str).replace(
             "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
         )
 
@@ -278,3 +282,4 @@ def get_dataset_from_json(dataset_id):
     except ValueError as error:
         logging.error(error)
         raise
+
