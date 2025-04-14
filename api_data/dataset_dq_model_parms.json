@@ -82,6 +82,40 @@
           ],
           "sample_size": 10000
         } 
-      } 
+      }, 
+      {
+        "dataset_id": "dataset_102",
+        "model_parameters": {
+          "features": [
+            {
+              "column": "account_id",
+              "variable_type": "category",
+              "variable_sub_type": "nominal",
+              "encoding": "frequency"
+            },
+            {
+              "column": "asset_id",
+              "variable_type": "category",
+              "variable_sub_type": "nominal",
+              "encoding": "one hot"
+            },
+            {
+              "column": "asset_value",
+              "variable_type": "numeric",
+              "variable_sub_type": "float",
+              "encoding": "numeric"
+            }
+          ],
+          "hist_data_snapshots": [
+            {
+              "snapshot": "t-1d"
+            },
+            {
+              "snapshot": "lme"
+            }
+          ],
+          "sample_size": 10000
+        } 
+      }
     ]
   }
