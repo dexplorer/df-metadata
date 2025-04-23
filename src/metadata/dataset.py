@@ -28,6 +28,7 @@ class Dataset:
     dataset_type: DatasetType
     schedule_id: str
     data_source_id: str
+    recon_data_source_id: str
 
     def __init__(
         self,
@@ -35,11 +36,13 @@ class Dataset:
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str | None,
+        recon_data_source_id: str | None,
     ):
         self.dataset_type = dataset_type
         self.dataset_id = dataset_id
         self.schedule_id = schedule_id
         self.data_source_id = data_source_id
+        self.recon_data_source_id = recon_data_source_id
 
     @classmethod
     def from_json(cls, dataset_id):
@@ -80,6 +83,7 @@ class DelimFileDataset(Dataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
         )
         self.file_delim = file_delim
 
@@ -97,6 +101,7 @@ class LocalDelimFileDataset(DelimFileDataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         file_delim: str,
         file_path: str,
         recon_dataset_type: str,
@@ -108,6 +113,7 @@ class LocalDelimFileDataset(DelimFileDataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
             file_delim,
         )
         self.file_path = file_path
@@ -142,6 +148,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         file_delim: str,
         file_uri: str,
         recon_dataset_type: str,
@@ -153,6 +160,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
             file_delim,
         )
         self.file_uri = file_uri
@@ -185,6 +193,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         file_delim: str,
         adls_uri: str,
     ):
@@ -193,6 +202,7 @@ class AzureADLSDelimFileDataset(DelimFileDataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
             file_delim,
         )
         self.adls_uri = adls_uri
@@ -213,6 +223,7 @@ class SparkTableDataset(Dataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
@@ -225,6 +236,7 @@ class SparkTableDataset(Dataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
         )
         self.database_name = database_name
         self.table_name = table_name
@@ -236,8 +248,10 @@ class SparkTableDataset(Dataset):
     def get_qualified_table_name(self):
         return f"{self.database_name}.{self.table_name}"
 
-    def resolve_recon_file_path(self, date_str):
-        return self.recon_file_path.replace("yyyymmdd", date_str)
+    def resolve_recon_file_path(self, date_str, data_source_user: str):
+        return self.recon_file_path.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_DIR", f"APP_DATA_IN_DIR/{data_source_user}"
+        )
 
     def get_physical_name(self):
         return self.get_qualified_table_name()
@@ -253,6 +267,7 @@ class SparkSqlFileDataset(Dataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         sql_file_path: str,
     ):
         super().__init__(
@@ -260,6 +275,7 @@ class SparkSqlFileDataset(Dataset):
             dataset_type,
             schedule_id,
             data_source_id,
+            recon_data_source_id,
         )
         self.sql_file_path = sql_file_path
 
