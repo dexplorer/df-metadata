@@ -7,6 +7,7 @@
       "file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_1",
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
     },
@@ -17,6 +18,7 @@
       "file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_2",
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
     },
@@ -27,6 +29,7 @@
       "file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_3",
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
     },
@@ -45,6 +48,7 @@
       "database_name": "dl_asset_mgmt",
       "table_name": "tasset",
       "partition_keys": [],
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/assets_yyyymmdd.recon"
     },
@@ -58,6 +62,7 @@
       "partition_keys": [
         "effective_date"
       ],
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon"
     },
@@ -71,6 +76,7 @@
       "partition_keys": [
         "effective_date"
       ],
+      "recon_dataset_type": "local delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_DIR/customers_yyyymmdd.recon"
     },
@@ -81,6 +87,7 @@
       "file_path": "APP_DATA_OUT_DIR/asset_value_agg_yyyymmdd.dat",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_4",
+      "recon_dataset_type": null,
       "recon_file_delim": null,
       "recon_file_path": null
     }, 
@@ -91,6 +98,7 @@
       "file_uri": "APP_DATA_IN_URI/assets_yyyymmdd.csv", 
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_1",
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_uri": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
     },
@@ -101,6 +109,7 @@
       "file_uri": "APP_DATA_IN_URI/acct_positions_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_2",
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_uri": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
     },
@@ -111,6 +120,7 @@
       "file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.csv",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_3",
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
     }, 
@@ -122,6 +132,7 @@
       "database_name": "dl_asset_mgmt",
       "table_name": "tasset",
       "partition_keys": [],
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
     },
@@ -135,6 +146,7 @@
       "partition_keys": [
         "effective_date"
       ],
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
     },
@@ -148,6 +160,7 @@
       "partition_keys": [
         "effective_date"
       ],
+      "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
       "recon_file_path": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
     },
@@ -158,6 +171,7 @@
       "file_uri": "APP_DATA_OUT_URI/asset_value_agg_yyyymmdd.dat",
       "schedule_id": "schedule_2",
       "data_source_id": "data_source_4",
+      "recon_dataset_type": null,
       "recon_file_delim": null,
       "recon_file_uri": null
     } 

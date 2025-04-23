@@ -11,6 +11,7 @@ def local_delim_file_dataset():
         data_source_id="data_source_1",
         file_delim=",",
         file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
+        recon_dataset_type="local delim file",
         recon_file_delim="|",
         recon_file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.recon",
     )

@@ -87,6 +87,7 @@ class DelimFileDataset(Dataset):
 @dataclass(kw_only=True)
 class LocalDelimFileDataset(DelimFileDataset):
     file_path: str
+    recon_dataset_type: DatasetType
     recon_file_delim: str
     recon_file_path: str
 
@@ -98,6 +99,7 @@ class LocalDelimFileDataset(DelimFileDataset):
         data_source_id: str,
         file_delim: str,
         file_path: str,
+        recon_dataset_type: str,
         recon_file_delim: str,
         recon_file_path: str,
     ):
@@ -109,6 +111,7 @@ class LocalDelimFileDataset(DelimFileDataset):
             file_delim,
         )
         self.file_path = file_path
+        self.recon_dataset_type = recon_dataset_type
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
 
@@ -129,6 +132,7 @@ class LocalDelimFileDataset(DelimFileDataset):
 @dataclass(kw_only=True)
 class AWSS3DelimFileDataset(DelimFileDataset):
     file_uri: str
+    recon_dataset_type: DatasetType
     recon_file_delim: str
     recon_file_uri: str
 
@@ -140,6 +144,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
         data_source_id: str,
         file_delim: str,
         file_uri: str,
+        recon_dataset_type: str,
         recon_file_delim: str,
         recon_file_uri: str,
     ):
@@ -151,7 +156,7 @@ class AWSS3DelimFileDataset(DelimFileDataset):
             file_delim,
         )
         self.file_uri = file_uri
-
+        self.recon_dataset_type = recon_dataset_type
         self.recon_file_delim = recon_file_delim
         self.recon_file_uri = recon_file_uri
 
@@ -198,6 +203,7 @@ class SparkTableDataset(Dataset):
     database_name: str
     table_name: str
     partition_keys: list[str] | None
+    recon_dataset_type: DatasetType | None
     recon_file_delim: str | None
     recon_file_path: str | None
 
@@ -210,6 +216,7 @@ class SparkTableDataset(Dataset):
         database_name: str,
         table_name: str,
         partition_keys: list[str] | None,
+        recon_dataset_type: str | None,
         recon_file_delim: str | None,
         recon_file_path: str | None,
     ):
@@ -222,6 +229,7 @@ class SparkTableDataset(Dataset):
         self.database_name = database_name
         self.table_name = table_name
         self.partition_keys = partition_keys
+        self.recon_dataset_type = recon_dataset_type
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
 
@@ -282,4 +290,3 @@ def get_dataset_from_json(dataset_id):
     except ValueError as error:
         logging.error(error)
         raise
-
