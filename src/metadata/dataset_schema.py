@@ -18,7 +18,7 @@ class DatasetSchema:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_schemas.json"
         json_key = "dataset_schemas"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             dataset_schemas = response.json()[json_key]
             if dataset_schemas:

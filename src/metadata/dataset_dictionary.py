@@ -41,7 +41,7 @@ class DatasetDictionary:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dictionary.json"
         json_key = "dictionaries"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             dictionaries = response.json()[json_key]
             if dictionaries:

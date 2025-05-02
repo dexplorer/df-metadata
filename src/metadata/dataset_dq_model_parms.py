@@ -70,7 +70,7 @@ class DatasetDQModelParameters:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dq_model_parms.json"
         json_key = "dq_model_parms"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             datasets_dq_model_parms = response.json()[json_key]
             # print(datasets_dq_model_parms)

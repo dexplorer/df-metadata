@@ -37,7 +37,7 @@ def get_all_dq_rules_from_json() -> list[DatasetDQRule]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dq_rules.json"
     json_key = "dq_rules"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         dq_rules = response.json()[json_key]
         if dq_rules:

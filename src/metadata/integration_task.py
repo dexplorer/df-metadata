@@ -75,7 +75,7 @@ class IntegrationTask:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/integration_tasks.json"
         json_key = "integration_tasks"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             integration_tasks = response.json()[json_key]
             # print(integration_tasks)
@@ -145,7 +145,7 @@ def get_integration_task_from_json(task_id: str):
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/integration_tasks.json"
     json_key = "integration_tasks"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         integration_tasks = response.json()[json_key]
         # print(integration_tasks)

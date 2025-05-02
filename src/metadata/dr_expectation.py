@@ -20,7 +20,7 @@ class DRExpectation:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dr_expectations.json"
         json_key = "dr_expectations"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             dr_expectations = response.json()[json_key]
             if dr_expectations:

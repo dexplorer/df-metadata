@@ -20,7 +20,7 @@ class DQExpectation:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dq_expectations.json"
         json_key = "dq_expectations"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             dq_expectations = response.json()[json_key]
             if dq_expectations:

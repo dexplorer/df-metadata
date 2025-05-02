@@ -55,7 +55,7 @@ class Workflow:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
         json_key = "workflows"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             workflows = response.json()[json_key]
             # print(workflows)
@@ -117,7 +117,7 @@ def get_workflow_from_json(workflow_id: str):
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/workflows.json"
     json_key = "workflows"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         workflows = response.json()[json_key]
         # print(workflows)

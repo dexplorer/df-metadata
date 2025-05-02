@@ -37,7 +37,7 @@ def get_all_dr_rules_from_json() -> list[DatasetDRRule]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_dr_rules.json"
     json_key = "dr_rules"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         dr_rules = response.json()[json_key]
         if dr_rules:

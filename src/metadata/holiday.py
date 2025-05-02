@@ -23,7 +23,7 @@ class Holiday:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/holidays.json"
         json_key = "holidays"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             holidays = response.json()[json_key]
             if holidays:
@@ -41,7 +41,7 @@ def get_all_holidays_from_json() -> list[Holiday]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/holidays.json"
     json_key = "holidays"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         # Get holidays from metadata
         holidays = response.json()[json_key]

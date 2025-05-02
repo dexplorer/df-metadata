@@ -50,7 +50,7 @@ class Dataset:
         # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
         json_key = "datasets"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             datasets = response.json()[json_key]
             # print(datasets)
@@ -76,6 +76,7 @@ class DelimFileDataset(Dataset):
         dataset_type: str,
         schedule_id: str | None,
         data_source_id: str,
+        recon_data_source_id: str,
         file_delim: str,
     ):
         super().__init__(
@@ -285,7 +286,7 @@ def get_dataset_from_json(dataset_id):
     # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
     json_key = "datasets"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         datasets = response.json()[json_key]
         # print(datasets)

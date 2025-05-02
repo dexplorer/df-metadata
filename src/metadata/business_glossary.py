@@ -25,7 +25,7 @@ class BusinessGlossaryItem:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/business_glossary.json"
         json_key = "glossary_items"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             glossary_items = response.json()[json_key]
             if glossary_items:
@@ -47,7 +47,7 @@ def get_all_bus_glossary_items_from_json() -> list[BusinessGlossaryItem]:
     json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/business_glossary.json"
     json_key = "glossary_items"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         glossary_items = response.json()[json_key]
         if glossary_items:

@@ -69,6 +69,24 @@
         ]
       },
       {
+        "dataset_id": "dataset_101",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_type", "data_type": "string"},
+            {"column_name": "asset_name", "data_type": "string"}
+        ]
+      },
+      {
+        "dataset_id": "dataset_1011",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "asset_id", "data_type": "string"},
+            {"column_name": "asset_type", "data_type": "string"},
+            {"column_name": "asset_name", "data_type": "string"}
+        ]
+      },
+      {
         "dataset_id": "dataset_102",
         "schema": [
             {"column_name": "effective_date", "data_type": "string"},
@@ -84,6 +102,38 @@
             {"column_name": "account_id", "data_type": "string"},
             {"column_name": "asset_id", "data_type": "string"},
             {"column_name": "asset_value", "data_type": "decimal(25,2)"}
+        ]
+      },
+      {
+        "dataset_id": "dataset_103",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "first_name", "data_type": "string"},
+            {"column_name": "last_name", "data_type": "string"},
+            {"column_name": "full_name", "data_type": "string"},
+            {"column_name": "ssn", "data_type": "string"},
+            {"column_name": "dob", "data_type": "string"},
+            {"column_name": "street_addr1", "data_type": "string"},
+            {"column_name": "street_addr2", "data_type": "string"},
+            {"column_name": "city", "data_type": "string"},
+            {"column_name": "state", "data_type": "string"},
+            {"column_name": "country", "data_type": "string"}
+        ]
+      }, 
+      {
+        "dataset_id": "dataset_1013",
+        "schema": [
+            {"column_name": "effective_date", "data_type": "string"},
+            {"column_name": "first_name", "data_type": "string"},
+            {"column_name": "last_name", "data_type": "string"},
+            {"column_name": "full_name", "data_type": "string"},
+            {"column_name": "ssn", "data_type": "string"},
+            {"column_name": "dob", "data_type": "string"},
+            {"column_name": "street_addr1", "data_type": "string"},
+            {"column_name": "street_addr2", "data_type": "string"},
+            {"column_name": "city", "data_type": "string"},
+            {"column_name": "state", "data_type": "string"},
+            {"column_name": "country", "data_type": "string"}
         ]
       }
     ]

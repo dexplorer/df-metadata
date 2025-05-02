@@ -34,7 +34,7 @@ class Schedule:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/schedules.json"
         json_key = "schedules"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             schedules = response.json()[json_key]
             if schedules:

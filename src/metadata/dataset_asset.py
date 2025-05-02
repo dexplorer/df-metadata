@@ -34,7 +34,7 @@ class DatasetAsset:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/dataset_assets.json"
         json_key = "assets"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             assets = response.json()[json_key]
             # print(assets)

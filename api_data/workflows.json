@@ -43,6 +43,12 @@
             "required_parameters": {
               "dataset_id": "dataset_2"
             }
+          },
+          {
+            "name": "data reconciliation",
+            "required_parameters": {
+              "dataset_id": "dataset_2"
+            }
           }
         ],
         "post_tasks": [

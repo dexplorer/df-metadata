@@ -25,7 +25,7 @@ class DataSource:
         json_file_url = "https://raw.githubusercontent.com/dexplorer/df-metadata/refs/heads/main/api_data/data_sources.json"
         json_key = "data_sources"
 
-        response = ufh.get_http_response(url=json_file_url)
+        response = ufh.get_request(url=json_file_url)
         try:
             data_sources = response.json()[json_key]
             # print(assets)
@@ -57,7 +57,7 @@ def get_data_source_from_json(data_source_id: str):
     # json_file_url = f"file:///workspaces/df-metadata/api_data/datasets.json"
     json_key = "data_sources"
 
-    response = ufh.get_http_response(url=json_file_url)
+    response = ufh.get_request(url=json_file_url)
     try:
         data_sources = response.json()[json_key]
         # print(data_sources)
