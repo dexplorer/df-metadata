@@ -1,16 +1,23 @@
+# Local
+
+APP := metadata
+
 install-dev: pyproject.toml
 	pip install --upgrade pip &&\
 	pip install --editable .[all-dev]
 
 lint:
-	pylint --disable=R,C src/metadata/*.py &&\
+	pylint --disable=R,C src/${APP}/*.py &&\
 	pylint --disable=R,C tests/*.py
 
 test:
-	python -m pytest -vv --cov=src/metadata tests
+	python -m pytest -vv --cov=src/${APP} tests
 
 format:
-	black src/metadata/*.py &&\
+	black src/${APP}/*.py &&\
 	black tests/*.py
+
+	isort src/${APP}/*.py &&\
+	isort tests/*.py
 
 all: install-dev lint format test 

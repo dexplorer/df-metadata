@@ -44,6 +44,7 @@ test = [
   "pylint",
   "black",
   "ipython",
+  "isort", 
 ]
 all-dev = [
   "metadata[my-packages-local, test]"
@@ -60,3 +61,14 @@ Documentation = "https://readthedocs.org"
 Repository = "https://github.com/dexplorer/df-metadata.git"
 Issues = "https://github.com/dexplorer/df-metadata/issues"
 Changelog = "https://github.com/dexplorer/df-metadata/blob/master/CHANGELOG.md"
+
+[tool.black]
+#line-length = 79
+
+[tool.isort]
+profile = "black"
+#line_length = 79
+known_third_party = ["pyspark"]  
+known_first_party = ["utils"]  
+sections = ["FUTURE","STDLIB","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
+src_paths = ["src", "utils"]  

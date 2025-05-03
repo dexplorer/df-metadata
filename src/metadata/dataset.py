@@ -1,10 +1,9 @@
+import logging
 from dataclasses import dataclass
 from enum import StrEnum
 
 # from typing import Optional
 from utils import http_io as ufh
-
-import logging
 
 
 class DatasetType(StrEnum):
@@ -217,6 +216,7 @@ class SparkTableDataset(Dataset):
     recon_dataset_type: DatasetType | None
     recon_file_delim: str | None
     recon_file_path: str | None
+    recon_file_uri: str | None
 
     def __init__(
         self,
@@ -231,6 +231,7 @@ class SparkTableDataset(Dataset):
         recon_dataset_type: str | None,
         recon_file_delim: str | None,
         recon_file_path: str | None,
+        recon_file_uri: str | None,
     ):
         super().__init__(
             dataset_id,
@@ -245,6 +246,7 @@ class SparkTableDataset(Dataset):
         self.recon_dataset_type = recon_dataset_type
         self.recon_file_delim = recon_file_delim
         self.recon_file_path = recon_file_path
+        self.recon_file_uri = recon_file_uri
 
     def get_qualified_table_name(self):
         return f"{self.database_name}.{self.table_name}"
@@ -252,6 +254,11 @@ class SparkTableDataset(Dataset):
     def resolve_recon_file_path(self, date_str, data_source_user: str):
         return self.recon_file_path.replace("yyyymmdd", date_str).replace(
             "APP_DATA_IN_DIR", f"APP_DATA_IN_DIR/{data_source_user}"
+        )
+
+    def resolve_recon_file_uri(self, date_str, data_source_user: str):
+        return self.recon_file_uri.replace("yyyymmdd", date_str).replace(
+            "APP_DATA_IN_URI", f"APP_DATA_IN_URI/{data_source_user}"
         )
 
     def get_physical_name(self):

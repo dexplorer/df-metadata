@@ -1,8 +1,7 @@
+import logging
 from dataclasses import dataclass
 
 from utils import http_io as ufh
-
-import logging
 
 
 @dataclass

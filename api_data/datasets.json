@@ -146,7 +146,7 @@
       "partition_keys": [],
       "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/assets_yyyymmdd.recon"
     },
     {
       "dataset_id": "dataset_1012",
@@ -161,7 +161,7 @@
       ],
       "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/acct_positions_yyyymmdd.recon"
     },
     {
       "dataset_id": "dataset_1013",
@@ -176,7 +176,7 @@
       ],
       "recon_dataset_type": "aws s3 delim file",
       "recon_file_delim": "|",
-      "recon_file_path": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
+      "recon_file_uri": "APP_DATA_IN_URI/customers_yyyymmdd.recon"
     },
     {
       "dataset_id": "dataset_1014",

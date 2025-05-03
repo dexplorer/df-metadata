@@ -1,10 +1,11 @@
 # from typing_extensions import TypedDict
+import logging
 from dataclasses import dataclass
-from utils import http_io as ufh
 from datetime import datetime
+
 from dateutil import rrule
 
-import logging
+from utils import http_io as ufh
 
 
 @dataclass

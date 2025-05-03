@@ -1,4 +1,5 @@
 import pytest
+
 from metadata import dataset as ds
 
 
@@ -9,6 +10,7 @@ def local_delim_file_dataset():
         dataset_type="local delim file",
         schedule_id="1",
         data_source_id="data_source_1",
+        recon_data_source_id="data_source_1",
         file_delim=",",
         file_path="APP_DATA_IN_DIR/acct_positions_yyyymmdd.csv",
         recon_dataset_type="local delim file",
