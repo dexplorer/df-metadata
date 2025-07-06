@@ -230,8 +230,8 @@ class SparkTableDataset(Dataset):
         partition_keys: list[str] | None,
         recon_dataset_type: str | None,
         recon_file_delim: str | None,
-        recon_file_path: str | None,
-        recon_file_uri: str | None,
+        recon_file_path: str = None,
+        recon_file_uri: str = None,
     ):
         super().__init__(
             dataset_id,
